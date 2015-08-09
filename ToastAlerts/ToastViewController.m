@@ -12,7 +12,7 @@
 
 @property UIView *viewToast;
 @property UILabel *messageLabel;
-@property UIImageView *decorationFrame;
+@property UIImageView *alertImageView;
 
 @end
 
@@ -22,12 +22,19 @@
 @synthesize shouldDismissWithTime;
 @synthesize dismissTime;
 @synthesize message;
+@synthesize image;
+@synthesize images;
+@synthesize shouldRepeatImagesAnimation;
+@synthesize timeForImagesInAnimation;
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
         dismissTime = 2.0;
+        timeForImagesInAnimation = 0.2;
+        images = [[NSArray alloc] init];
+        shouldRepeatImagesAnimation = true;
     }
     return self;
 }
@@ -39,7 +46,7 @@
     
     [self createViewToast];
     [self createMessageLabel];
-    
+    [self createalertImageView];
 }
 
 - (void) createViewToast {
@@ -139,11 +146,94 @@
      ];
     
     
+    [_messageLabel addConstraint:
+     [NSLayoutConstraint
+      constraintWithItem:_messageLabel
+      attribute:NSLayoutAttributeHeight
+      relatedBy:NSLayoutRelationEqual
+      toItem:nil
+      attribute:NSLayoutAttributeHeight
+      multiplier:1
+      constant:32]
+     ];
+    
+    
+}
+
+- (void) createalertImageView {
+    _alertImageView = [[UIImageView alloc] init];
+    _alertImageView.clipsToBounds = true;
+    [_alertImageView setContentMode:UIViewContentModeScaleAspectFit];
+    
+    [_viewToast addSubview:_alertImageView];
+    
+    if (images.count > 0) {
+        _alertImageView.image = images[0];
+        _alertImageView.animationImages = images;
+        _alertImageView.animationDuration = timeForImagesInAnimation * images.count;
+        if (!shouldRepeatImagesAnimation) {
+            _alertImageView.animationRepeatCount = 1;
+        }
+    } else {
+        _alertImageView.image = image;
+    }
+    [_alertImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [_viewToast addConstraint:
+     [NSLayoutConstraint
+      constraintWithItem:_alertImageView
+      attribute:NSLayoutAttributeTrailing
+      relatedBy:NSLayoutRelationEqual
+      toItem:_viewToast
+      attribute:NSLayoutAttributeTrailing
+      multiplier:1
+      constant:-10]
+     ];
+    
+    [_viewToast addConstraint:
+     [NSLayoutConstraint
+      constraintWithItem:_alertImageView
+      attribute:NSLayoutAttributeLeading
+      relatedBy:NSLayoutRelationEqual
+      toItem:_viewToast
+      attribute:NSLayoutAttributeLeading
+      multiplier:1
+      constant:10]
+     ];
+    
+    
+    [_viewToast addConstraint:
+     [NSLayoutConstraint
+      constraintWithItem:_alertImageView
+      attribute:NSLayoutAttributeTop
+      relatedBy:NSLayoutRelationEqual
+      toItem:_viewToast
+      attribute:NSLayoutAttributeTop
+      multiplier:1
+      constant:20]
+     ];
+    
+    [_viewToast addConstraint:
+     [NSLayoutConstraint
+      constraintWithItem:_alertImageView
+      attribute:NSLayoutAttributeBaseline
+      relatedBy:NSLayoutRelationEqual
+      toItem:_messageLabel
+      attribute:NSLayoutAttributeTop
+      multiplier:1
+      constant:-10]
+     ];
+    
+    
     
 }
 
 
 - (void) viewDidAppear:(BOOL)animated {
+    if (images.count > 0) {
+        _alertImageView.image = images[images.count-1];
+        [_alertImageView startAnimating];
+    }
     if (shouldDismissWithTap) {
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissMessageView:)];
         tapGestureRecognizer.delegate = self;
