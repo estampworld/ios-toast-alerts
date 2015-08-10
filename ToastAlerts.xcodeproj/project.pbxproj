@@ -14,6 +14,8 @@
 		F9E50AD31B75622A00B1423C /* ToastViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E50AD11B75622A00B1423C /* ToastViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9E50AD41B75622A00B1423C /* ToastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AD21B75622A00B1423C /* ToastViewController.m */; };
 		F9E50ADF1B757D4B00B1423C /* AlertViewStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E50ADE1B757D4B00B1423C /* AlertViewStoryBoard.storyboard */; };
+		F9E50B771B770AD600B1423C /* UIViewController+ext.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E50B751B770AD600B1423C /* UIViewController+ext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9E50B781B770AD600B1423C /* UIViewController+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E50B761B770AD600B1423C /* UIViewController+ext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		F9E50AD11B75622A00B1423C /* ToastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastViewController.h; sourceTree = "<group>"; };
 		F9E50AD21B75622A00B1423C /* ToastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastViewController.m; sourceTree = "<group>"; };
 		F9E50ADE1B757D4B00B1423C /* AlertViewStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlertViewStoryBoard.storyboard; sourceTree = "<group>"; };
+		F9E50B751B770AD600B1423C /* UIViewController+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ext.h"; sourceTree = "<group>"; };
+		F9E50B761B770AD600B1423C /* UIViewController+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ext.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				F9E50AD21B75622A00B1423C /* ToastViewController.m */,
 				F9E50ADE1B757D4B00B1423C /* AlertViewStoryBoard.storyboard */,
 				F9E50ACF1B75615700B1423C /* ExtensionA.swift */,
+				F9E50B751B770AD600B1423C /* UIViewController+ext.h */,
+				F9E50B761B770AD600B1423C /* UIViewController+ext.m */,
 				F9E50A841B75605200B1423C /* Supporting Files */,
 			);
 			path = ToastAlerts;
@@ -122,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E50A871B75605200B1423C /* ToastAlerts.h in Headers */,
+				F9E50B771B770AD600B1423C /* UIViewController+ext.h in Headers */,
 				F9E50AD31B75622A00B1423C /* ToastViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +232,7 @@
 			files = (
 				F9E50AD41B75622A00B1423C /* ToastViewController.m in Sources */,
 				F9E50AD01B75615700B1423C /* ExtensionA.swift in Sources */,
+				F9E50B781B770AD600B1423C /* UIViewController+ext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

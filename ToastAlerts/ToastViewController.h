@@ -57,6 +57,4 @@
  */
 @property (nonatomic) NSArray *images;
 
-- (void) sayHi;
-
 @end

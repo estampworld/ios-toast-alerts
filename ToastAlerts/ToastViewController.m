@@ -7,6 +7,7 @@
 //
 
 #import "ToastViewController.h"
+#import "UIViewController+ext.h"
 
 @interface ToastViewController ()
 
@@ -259,9 +260,6 @@
     [self dismissMessageView];
 }
 
-- (void) sayHi {
-    NSLog(@"yeah yeah");
-}
 
 /*
 #pragma mark - Navigation
@@ -274,3 +272,5 @@
 */
 
 @end
+
+
