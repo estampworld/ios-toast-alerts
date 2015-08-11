@@ -63,4 +63,14 @@
  */
 @property (nonatomic) NSArray *images;
 
+/**
+ Show a Toast Alert View with user configurations
+ */
+- (void) show;
+
+/**
+ Dismiss a Toast Alert View with user configurations
+ */
+- (void) dismiss;
+
 @end

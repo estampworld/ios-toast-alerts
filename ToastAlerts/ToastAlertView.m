@@ -286,7 +286,7 @@
 #pragma mark - Dismiss
 
 - (void) dismissMessageView  {
-    [self removeFromSuperview];
+    [self dismiss];
 }
 
 - (void) dismissMessageView: (UIGestureRecognizer *) sender {
@@ -304,6 +304,16 @@
 }
 */
 
+#pragma mark - Display
+
+- (void) show {
+    UIWindow *frontWindow = [[UIApplication sharedApplication] keyWindow];
+    [frontWindow addSubview:self];
+}
+
+- (void) dismiss {
+    [self removeFromSuperview];
+}
 
 - (CGSize)screenSize {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;

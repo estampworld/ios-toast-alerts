@@ -40,7 +40,7 @@
     toastViewController.shouldRepeatImagesAnimation = repeatAnimation;
     toastViewController.timeForImagesInAnimation =  frameTime;
     
-    [self.view.window addSubview:toastViewController];
+    [toastViewController show];
     
 }
 
