@@ -11,11 +11,38 @@
 @interface UIViewController (ext)
 
 /**
- @param [message] [The message to display]
+ Show a Toast Alert View with a message and single image
+ @param message The message to display
+ @param image The image to display
  */
 - (void) showToastAlert: (NSString *) message image:(UIImage *) image;
+
+/**
+ Show a Toast Alert View with a message and single image
+ @param message The message to display
+ @param image The image to display
+ @param tapHide Should the Toast Alert View dismiss with Tap
+ @param timeHide Should the Toast Alert View dismiss with Time
+ @param time if timeHide is true, this is the time it will take to hide
+ */
 - (void) showToastAlert: (NSString *) message image:(UIImage *) image hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time;
+
+/**
+ Show a Toast Alert View with a message and single image
+ @param message The message to display
+ @param images The images animation to display
+ */
 - (void) showToastAlert: (NSString *) message images:(NSArray *) images;
+
+/**
+ Show a Toast Alert View with a message and single image
+ @param message The message to display
+ @param images The images animation to display
+ @param frameDuration the image frame time to display
+ @param tapHide Should the Toast Alert View dismiss with Tap
+ @param timeHide Should the Toast Alert View dismiss with Time
+ @param time if timeHide is true, this is the time it will take to hide
+ */
 - (void) showToastAlert: (NSString *) message images:(NSArray *) images frameDuration:(double) frameTime  repeatAnimation: (BOOL) repeatAnimation hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time;
 
 @end

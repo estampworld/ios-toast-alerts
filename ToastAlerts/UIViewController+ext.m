@@ -26,6 +26,7 @@
 - (void) showToastAlert: (NSString *) message images:(NSArray *) images {
     [self showToastAlert:message images:images frameDuration:0.2 repeatAnimation:true hideWithTap:true hideWithTime:true hideTime:2.0];
 }
+
 - (void) showToastAlert: (NSString *) message images:(NSArray *) images frameDuration:(double) frameTime  repeatAnimation: (BOOL) repeatAnimation hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time {
     
     ToastViewController *toastViewController = [[ToastViewController alloc] init];
