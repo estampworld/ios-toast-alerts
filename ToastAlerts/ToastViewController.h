@@ -11,6 +11,12 @@
 @interface ToastViewController : UIViewController < UIGestureRecognizerDelegate>
 
 /**
+ The width and height of the frame
+ The default value is 155
+ */
+@property double frameSize;
+
+/**
  The amount of time an image will show
  The default value is 0.2
  @see images

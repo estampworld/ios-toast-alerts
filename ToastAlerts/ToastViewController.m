@@ -19,6 +19,7 @@
 
 @implementation ToastViewController
 
+@synthesize frameSize;
 @synthesize shouldDismissWithTap;
 @synthesize shouldDismissWithTime;
 @synthesize dismissTime;
@@ -36,6 +37,7 @@
         timeForImagesInAnimation = 0.2;
         images = [[NSArray alloc] init];
         shouldRepeatImagesAnimation = true;
+        frameSize = 155;
     }
     return self;
 }
@@ -53,7 +55,7 @@
 - (void) createViewToast {
     _viewToast = [[UIView alloc] init];
     _viewToast.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:223.0/255.0 blue:227.0/255.0 alpha:1.0];
-    _viewToast.layer.cornerRadius = 20;
+    _viewToast.layer.cornerRadius = 10;
     _viewToast.layer.masksToBounds = YES;
     [self.view addSubview:_viewToast];
     
@@ -67,7 +69,7 @@
       toItem:nil
       attribute:NSLayoutAttributeWidth
       multiplier:1
-      constant:200]
+      constant:frameSize]
      ];
     
     [_viewToast addConstraint:
@@ -78,7 +80,7 @@
       toItem:nil
       attribute:NSLayoutAttributeHeight
       multiplier:1
-      constant:200]
+      constant:frameSize]
      ];
     
     
@@ -105,7 +107,7 @@
 - (void) createMessageLabel {
     _messageLabel = [[UILabel alloc] init];
     _messageLabel.text = message;
-    _messageLabel.font = [UIFont systemFontOfSize:22.0];
+    _messageLabel.font = [UIFont systemFontOfSize:16.0];
     _messageLabel.textColor = [UIColor colorWithRed:90.0/255.0 green:94.0/255.0 blue:97.0/255.0 alpha:1.0];
     [_messageLabel setTextAlignment:NSTextAlignmentCenter];
     [_viewToast addSubview:_messageLabel];
@@ -229,12 +231,7 @@
     
 }
 
-
-- (void) viewDidAppear:(BOOL)animated {
-    if (images.count > 0) {
-        _alertImageView.image = images[images.count-1];
-        [_alertImageView startAnimating];
-    }
+- (void) viewWillAppear:(BOOL)animated {
     if (shouldDismissWithTap) {
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissMessageView:)];
         tapGestureRecognizer.delegate = self;
@@ -242,6 +239,13 @@
     }
     if (shouldDismissWithTime) {
         [NSTimer scheduledTimerWithTimeInterval:dismissTime target:self selector:@selector(dismissMessageView) userInfo:nil repeats:NO];
+    }
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    if (images.count > 0) {
+        _alertImageView.image = images[images.count-1];
+        [_alertImageView startAnimating];
     }
 }
 
