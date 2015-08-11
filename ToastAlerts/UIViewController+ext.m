@@ -19,14 +19,24 @@
 
 - (void) showToastAlert: (NSString *) message image:(UIImage *) image hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time {
     
+    [self showToastAlert:message images:@[image] frameDuration:0.2 repeatAnimation:false hideWithTap:tapHide hideWithTime:timeHide hideTime:time];
+    
+}
+
+- (void) showToastAlert: (NSString *) message images:(NSArray *) images {
+    [self showToastAlert:message images:images frameDuration:0.2 repeatAnimation:true hideWithTap:true hideWithTime:true hideTime:2.0];
+}
+- (void) showToastAlert: (NSString *) message images:(NSArray *) images frameDuration:(double) frameTime  repeatAnimation: (BOOL) repeatAnimation hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time {
+    
     ToastViewController *toastViewController = [[ToastViewController alloc] init];
     toastViewController.shouldDismissWithTap = tapHide;
     toastViewController.shouldDismissWithTime = timeHide;
     toastViewController.dismissTime = time;
     
     toastViewController.message = message;
-    toastViewController.image = image;
-    
+    toastViewController.images = images;
+    toastViewController.shouldRepeatImagesAnimation = repeatAnimation;
+    toastViewController.timeForImagesInAnimation =  frameTime;
     toastViewController.modalPresentationStyle = UIModalPresentationOverFullScreen;
     toastViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
