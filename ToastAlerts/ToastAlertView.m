@@ -1,15 +1,15 @@
 //
-//  ToastViewController.m
+//  ToastView.m
 //  ToastAlerts
 //
 //  Created by Eduardo Irías on 8/7/15.
 //  Copyright (c) 2015 Estamp World. All rights reserved.
 //
 
-#import "ToastViewController.h"
+#import "ToastAlertView.h"
 #import "UIViewController+ext.h"
 
-@interface ToastViewController ()
+@interface ToastAlertView ()
 
 @property UIView *viewToast;
 @property UILabel *messageLabel;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation ToastViewController
+@implementation ToastAlertView
 
 @synthesize frameSize;
 @synthesize shouldDismissWithTap;
@@ -29,35 +29,87 @@
 @synthesize shouldRepeatImagesAnimation;
 @synthesize timeForImagesInAnimation;
 
+#pragma mark - Init
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        dismissTime = 2.0;
-        timeForImagesInAnimation = 0.2;
-        images = [[NSArray alloc] init];
-        shouldRepeatImagesAnimation = true;
-        frameSize = 155;
+        [self setVars];
     }
+    
     return self;
 }
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setVars];
+    }
     
-    self.view.backgroundColor = [UIColor clearColor];
+    return self;
+}
+
+- (void) setVars {
+    dismissTime = 2.0;
+    timeForImagesInAnimation = 0.2;
+    images = [[NSArray alloc] init];
+    shouldRepeatImagesAnimation = true;
+    frameSize = 155;
+
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector:   @selector(deviceOrientationDidChange:) name: UIDeviceOrientationDidChangeNotification object: nil];
+
+}
+
+- (void)deviceOrientationDidChange:(NSNotification *)notification {
+    //Obtain current device orientation
+    [self setFrame:CGRectMake(0, 0, [self screenSize].width, [self screenSize].height) ];
+}
+
+#pragma mark - View Cycle
+
+- (void)willMoveToWindow {
+    self.backgroundColor = [UIColor clearColor];
+}
+
+- (void) didMoveToWindow {
+    [self setFrame:CGRectMake(0, 0, [self screenSize].width, [self screenSize].height) ];
+    
+    self.backgroundColor = [UIColor clearColor];
     
     [self createViewToast];
     [self createMessageLabel];
     [self createalertImageView];
+    
+    
+    if (images.count > 0) {
+        _alertImageView.image = images[images.count-1];
+        [_alertImageView startAnimating];
+    }
+    if (shouldDismissWithTap) {
+        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissMessageView:)];
+        tapGestureRecognizer.delegate = self;
+        [self addGestureRecognizer:tapGestureRecognizer];
+    }
+    if (shouldDismissWithTime) {
+        [NSTimer scheduledTimerWithTimeInterval:dismissTime target:self selector:@selector(dismissMessageView) userInfo:nil repeats:NO];
+    }
 }
+
+-(void) dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+}
+
+#pragma mark - SubViews
 
 - (void) createViewToast {
     _viewToast = [[UIView alloc] init];
     _viewToast.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:223.0/255.0 blue:227.0/255.0 alpha:1.0];
     _viewToast.layer.cornerRadius = 10;
     _viewToast.layer.masksToBounds = YES;
-    [self.view addSubview:_viewToast];
+    [self addSubview:_viewToast];
     
     [_viewToast setTranslatesAutoresizingMaskIntoConstraints:NO];
     
@@ -84,20 +136,20 @@
      ];
     
     
-    [self.view addConstraint:
+    [self addConstraint:
      [NSLayoutConstraint constraintWithItem:_viewToast
                                   attribute:NSLayoutAttributeCenterX
                                   relatedBy:0
-                                     toItem:self.view
+                                     toItem:self
                                   attribute:NSLayoutAttributeCenterX
                                  multiplier:1
                                    constant:0]];
     
-    [self.view addConstraint:
+    [self addConstraint:
      [NSLayoutConstraint constraintWithItem:_viewToast
                                   attribute:NSLayoutAttributeCenterY
                                   relatedBy:0
-                                     toItem:self.view
+                                     toItem:self
                                   attribute:NSLayoutAttributeCenterY
                                  multiplier:1
                                    constant:0]];
@@ -231,33 +283,10 @@
     
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    if (shouldDismissWithTap) {
-        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissMessageView:)];
-        tapGestureRecognizer.delegate = self;
-        [self.view addGestureRecognizer:tapGestureRecognizer];
-    }
-    if (shouldDismissWithTime) {
-        [NSTimer scheduledTimerWithTimeInterval:dismissTime target:self selector:@selector(dismissMessageView) userInfo:nil repeats:NO];
-    }
-}
-
-- (void) viewDidAppear:(BOOL)animated {
-    if (images.count > 0) {
-        _alertImageView.image = images[images.count-1];
-        [_alertImageView startAnimating];
-    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - Dismiss
 
 - (void) dismissMessageView  {
-    [self dismissViewControllerAnimated:true completion:^{
-        
-    }];
+    [self removeFromSuperview];
 }
 
 - (void) dismissMessageView: (UIGestureRecognizer *) sender {
@@ -274,6 +303,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (CGSize)screenSize {
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+        return CGSizeMake(screenSize.height, screenSize.width);
+    }
+    return screenSize;
+}
+
 
 @end
 

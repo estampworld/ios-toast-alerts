@@ -16,5 +16,5 @@ FOUNDATION_EXPORT const unsigned char ToastAlertsVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ToastAlerts/PublicHeader.h>
 
-#import <ToastAlerts/ToastViewController.h>
+#import <ToastAlerts/ToastAlertView.h>
 #import <ToastAlerts/UIViewController+ext.h>

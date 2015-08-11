@@ -7,7 +7,7 @@
 //
 
 #import "UIViewController+ext.h"
-#import "ToastViewController.h"
+#import "ToastAlertView.h"
 
 @implementation UIViewController (ext)
 
@@ -29,7 +29,8 @@
 
 - (void) showToastAlert: (NSString *) message images:(NSArray *) images frameDuration:(double) frameTime  repeatAnimation: (BOOL) repeatAnimation hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time {
     
-    ToastViewController *toastViewController = [[ToastViewController alloc] init];
+    ToastAlertView *toastViewController = [[ToastAlertView alloc] init];
+    
     toastViewController.shouldDismissWithTap = tapHide;
     toastViewController.shouldDismissWithTime = timeHide;
     toastViewController.dismissTime = time;
@@ -38,13 +39,8 @@
     toastViewController.images = images;
     toastViewController.shouldRepeatImagesAnimation = repeatAnimation;
     toastViewController.timeForImagesInAnimation =  frameTime;
-    toastViewController.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    toastViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
-    [self presentViewController:toastViewController animated:true completion:^{
-        
-    }];
-    
+    [self.view.window addSubview:toastViewController];
     
 }
 

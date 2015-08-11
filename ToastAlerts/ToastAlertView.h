@@ -1,5 +1,5 @@
 //
-//  ToastViewController.h
+//  ToastAlertView.h
 //  ToastAlerts
 //
 //  Created by Eduardo Irías on 8/7/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ToastViewController : UIViewController < UIGestureRecognizerDelegate>
+@interface ToastAlertView : UIView < UIGestureRecognizerDelegate>
 
 /**
  The width and height of the frame
