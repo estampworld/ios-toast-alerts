@@ -1,0 +1,6 @@
+framework module ToastAlerts {
+  umbrella header "ToastAlerts.h"
+
+  export *
+  module * { export * }
+}
