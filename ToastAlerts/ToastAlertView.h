@@ -10,6 +10,8 @@
 
 @interface ToastAlertView : UIView < UIGestureRecognizerDelegate>
 
+#pragma mark - Attributes
+
 /**
  The width and height of the frame
  The default value is 155
@@ -63,6 +65,15 @@
  */
 @property (nonatomic) NSArray *images;
 
+#pragma mark - Functions
+
+/**
+ Inits a Toast Alert View with a message and image
+ @see show Function
+ @see dismiss Function
+ */
+- (instancetype) initWithMessage:(NSString *) message image:(UIImage *) image;
+
 /**
  Show a Toast Alert View with user configurations
  */
@@ -72,5 +83,6 @@
  Dismiss a Toast Alert View with user configurations
  */
 - (void) dismiss;
+
 
 @end

@@ -18,16 +18,16 @@
 @end
 
 @implementation ToastAlertView
-
-@synthesize frameSize;
-@synthesize shouldDismissWithTap;
-@synthesize shouldDismissWithTime;
-@synthesize dismissTime;
-@synthesize message;
-@synthesize image;
-@synthesize images;
-@synthesize shouldRepeatImagesAnimation;
-@synthesize timeForImagesInAnimation;
+//
+//@synthesize frameSize;
+//@synthesize shouldDismissWithTap;
+//@synthesize shouldDismissWithTime;
+//@synthesize dismissTime;
+//////@synthesize message;
+////@synthesize image;
+//@synthesize images;
+//@synthesize shouldRepeatImagesAnimation;
+//@synthesize timeForImagesInAnimation;
 
 #pragma mark - Init
 
@@ -40,6 +40,7 @@
     
     return self;
 }
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -50,12 +51,25 @@
     return self;
 }
 
+- (instancetype) initWithMessage:(NSString *) message image:(UIImage *) image {
+    self = [super init];
+    if (self) {
+        [self setVars];
+        
+        _message = message;
+        _image = image;
+        
+    }
+    
+    return self;
+}
+
 - (void) setVars {
-    dismissTime = 2.0;
-    timeForImagesInAnimation = 0.2;
-    images = [[NSArray alloc] init];
-    shouldRepeatImagesAnimation = true;
-    frameSize = 155;
+    self.dismissTime = 2.0;
+    self.timeForImagesInAnimation = 0.2;
+    self.images = [[NSArray alloc] init];
+    self.shouldRepeatImagesAnimation = true;
+    self.frameSize = 155;
 
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver: self selector:   @selector(deviceOrientationDidChange:) name: UIDeviceOrientationDidChangeNotification object: nil];
@@ -83,17 +97,17 @@
     [self createalertImageView];
     
     
-    if (images.count > 0) {
-        _alertImageView.image = images[images.count-1];
+    if (self.images.count > 0) {
+        _alertImageView.image = self.images[self.images.count-1];
         [_alertImageView startAnimating];
     }
-    if (shouldDismissWithTap) {
+    if (self.shouldDismissWithTap) {
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissMessageView:)];
         tapGestureRecognizer.delegate = self;
         [self addGestureRecognizer:tapGestureRecognizer];
     }
-    if (shouldDismissWithTime) {
-        [NSTimer scheduledTimerWithTimeInterval:dismissTime target:self selector:@selector(dismissMessageView) userInfo:nil repeats:NO];
+    if (self.shouldDismissWithTime) {
+        [NSTimer scheduledTimerWithTimeInterval:self.dismissTime target:self selector:@selector(dismissMessageView) userInfo:nil repeats:NO];
     }
 }
 
@@ -121,7 +135,7 @@
       toItem:nil
       attribute:NSLayoutAttributeWidth
       multiplier:1
-      constant:frameSize]
+      constant:self.frameSize]
      ];
     
     [_viewToast addConstraint:
@@ -132,7 +146,7 @@
       toItem:nil
       attribute:NSLayoutAttributeHeight
       multiplier:1
-      constant:frameSize]
+      constant:self.frameSize]
      ];
     
     
@@ -158,7 +172,7 @@
 
 - (void) createMessageLabel {
     _messageLabel = [[UILabel alloc] init];
-    _messageLabel.text = message;
+    _messageLabel.text = self.message;
     _messageLabel.font = [UIFont systemFontOfSize:16.0];
     _messageLabel.textColor = [UIColor colorWithRed:90.0/255.0 green:94.0/255.0 blue:97.0/255.0 alpha:1.0];
     [_messageLabel setTextAlignment:NSTextAlignmentCenter];
@@ -222,15 +236,15 @@
     
     [_viewToast addSubview:_alertImageView];
     
-    if (images.count > 0) {
-        _alertImageView.image = images[0];
-        _alertImageView.animationImages = images;
-        _alertImageView.animationDuration = timeForImagesInAnimation * images.count;
-        if (!shouldRepeatImagesAnimation) {
+    if (self.images.count > 0) {
+        _alertImageView.image = self.images[0];
+        _alertImageView.animationImages = self.images;
+        _alertImageView.animationDuration = self.timeForImagesInAnimation * self.images.count;
+        if (!self.shouldRepeatImagesAnimation) {
             _alertImageView.animationRepeatCount = 1;
         }
     } else {
-        _alertImageView.image = image;
+        _alertImageView.image = self.image;
     }
     [_alertImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
