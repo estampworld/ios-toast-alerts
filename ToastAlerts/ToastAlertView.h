@@ -86,7 +86,29 @@
  @see show Function
  @see dismiss Function
  */
-- (instancetype) initWithMessage:(NSString *) message image:(UIImage *) image  hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time;
+- (instancetype) initWithMessage:(NSString *) message image:(UIImage *) image hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time;
+
+/**
+ Inits a Toast Alert View with a message and image
+ @param message The message to display
+ @param images The image animtion to display
+ @see show Function
+ @see dismiss Function
+ */
+- (instancetype) initWithMessage:(NSString *) message images:(NSArray *) images;
+
+/**
+ Inits a Toast Alert View with a message and image
+ @param message The message to display
+ @param images The image animtion to display
+ @param tapHide Should the Toast Alert View dismiss with Tap
+ @param timeHide Should the Toast Alert View dismiss with Time
+ @param time if timeHide is true, this is the time it will take to hide
+ @see show Function
+ @see dismiss Function
+ */
+- (instancetype) initWithMessage:(NSString *) message images:(NSArray *) images hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time;
+
 /**
  Show a Toast Alert View with user configurations
  */

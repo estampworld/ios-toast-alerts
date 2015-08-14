@@ -85,6 +85,42 @@
     return self;
 }
 
+- (instancetype) initWithMessage:(NSString *) message images:(NSArray *) images {
+    self = [super init];
+    if (self) {
+        [self setVars];
+        
+        _message = message;
+        _image = images[0];
+        _images = images;
+        
+        self.shouldDismissWithTap = true;
+        self.shouldDismissWithTime = true;
+        
+    }
+    
+    return self;
+}
+
+- (instancetype) initWithMessage:(NSString *) message images:(NSArray *) images  hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time {
+    self = [super init];
+    if (self) {
+        [self setVars];
+        
+        _message = message;
+        _image = images[0];
+        _images = images;
+        
+        self.shouldDismissWithTap = tapHide;
+        self.shouldDismissWithTime = timeHide;
+        
+        self.dismissTime = time;
+        
+    }
+    
+    return self;
+}
+
 - (void) setVars {
     self.dismissTime = 2.0;
     self.timeForImagesInAnimation = 0.2;
