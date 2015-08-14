@@ -58,6 +58,27 @@
         
         _message = message;
         _image = image;
+     
+        self.shouldDismissWithTap = true;
+        self.shouldDismissWithTime = true;
+        
+    }
+    
+    return self;
+}
+
+- (instancetype) initWithMessage:(NSString *) message image:(UIImage *) image  hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time {
+    self = [super init];
+    if (self) {
+        [self setVars];
+        
+        _message = message;
+        _image = image;
+        
+        self.shouldDismissWithTap = tapHide;
+        self.shouldDismissWithTime = timeHide;
+        
+        self.dismissTime = time;
         
     }
     
