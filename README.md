@@ -1,7 +1,7 @@
 # iOS Toast Alert View Framework
 A framework to display Toast Alerts in IOS.
 
-[Download Framework](http://estampworld.com/iostoastalerts/)
+[More Info](http://estampworld.com/iostoastalerts/)
 
 
 ##Features
@@ -17,9 +17,14 @@ A framework to display Toast Alerts in IOS.
 ###Swift
 **Toast Alert View with Message & Image**
 
+Show a Toast Alert with message and icon using a Extensions function
 ```
-//Toast Alert View with Message & Image
 self.showToastAlert("Hey!", image: UIImage(named: "CatIcon")!)
+```
+Show a Toast Alert with message and icon using ToastAlertView Object
+```
+let tav =  ToastAlertView(message: "Hey!", image: UIImage(named: "Cat Icon")!)
+tav.show()
 ```
 
 **Toast Alert View with Time Dissmis Only**
