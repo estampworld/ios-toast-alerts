@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F919DAF91B7DC7B4006EA8D3 /* ToastAlerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D33AE51B7D5EDD00822D0E /* ToastAlerts.framework */; };
 		F919DAFA1B7DC7B4006EA8D3 /* ToastAlerts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9D33AE51B7D5EDD00822D0E /* ToastAlerts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F9D33AE61B7D5EDD00822D0E /* ToastAlerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D33AE51B7D5EDD00822D0E /* ToastAlerts.framework */; };
 		F9E50AAC1B75609A00B1423C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AAB1B75609A00B1423C /* AppDelegate.swift */; };
@@ -74,7 +73,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9D33AE61B7D5EDD00822D0E /* ToastAlerts.framework in Frameworks */,
-				F919DAF91B7DC7B4006EA8D3 /* ToastAlerts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +210,9 @@
 		F9E50A9E1B75609A00B1423C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Estamp World";
 				TargetAttributes = {
 					F9E50AA51B75609A00B1423C = {
@@ -338,6 +338,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -413,6 +414,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.estampworld.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -430,6 +432,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.estampworld.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -448,6 +451,7 @@
 				);
 				INFOPLIST_FILE = "Toast Alert SamplesTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.estampworld.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toast Alert Samples.app/Toast Alert Samples";
 			};
@@ -463,6 +467,7 @@
 				);
 				INFOPLIST_FILE = "Toast Alert SamplesTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.estampworld.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toast Alert Samples.app/Toast Alert Samples";
 			};

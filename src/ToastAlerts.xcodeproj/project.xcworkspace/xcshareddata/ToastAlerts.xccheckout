@@ -11,17 +11,17 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6113F67412450AC2EC89C9D6ECE7DBA093046920</key>
-		<string>https://github.com/estampworld/IOS-Toast-Alerts.git</string>
+		<string>https://github.com/estampworld/ios-toast-alerts.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ToastAlerts.xcodeproj</string>
+	<string>src/ToastAlerts.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6113F67412450AC2EC89C9D6ECE7DBA093046920</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/estampworld/IOS-Toast-Alerts.git</string>
+	<string>https://github.com/estampworld/ios-toast-alerts.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>6113F67412450AC2EC89C9D6ECE7DBA093046920</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ToastAlerts</string>
+			<string>ios-toast-alerts</string>
 		</dict>
 	</array>
 </dict>
