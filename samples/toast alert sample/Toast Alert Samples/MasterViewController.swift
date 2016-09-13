@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ToastAlerts
 
 class MasterViewController: UITableViewController {
 
@@ -23,7 +22,7 @@ class MasterViewController: UITableViewController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+        if UIDevice.current.userInterfaceIdiom == .pad {
             self.clearsSelectionOnViewWillAppear = false
             self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
         }
@@ -37,7 +36,7 @@ class MasterViewController: UITableViewController {
         
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
     }
     
@@ -49,15 +48,15 @@ class MasterViewController: UITableViewController {
    
     // MARK: - Segues
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
-                let object = objects[indexPath.row]
+                let object = objects[(indexPath as NSIndexPath).row]
                 
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object["detail"]
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                controller.detailItem = object["detail"] as AnyObject?
+                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
@@ -65,36 +64,36 @@ class MasterViewController: UITableViewController {
 
     // MARK: - Table View
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
 
-        let object = objects[indexPath.row]
+        let object = objects[(indexPath as NSIndexPath).row]
         cell.textLabel!.text = object["title"]!
         cell.detailTextLabel!.text = object["detail"]!
         return cell
     }
 
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let indexPath = self.tableView.indexPathForSelectedRow {
-            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
             
 
-            switch indexPath.row {
+            switch (indexPath as NSIndexPath).row {
             case 0:
                 
                 //self.showToastAlert("Hey!", image: UIImage(named: "Cat Icon")!)
                 let tav =  ToastAlertView(message: "Hey!", image: UIImage(named: "Cat Icon")!)
-                tav.show()
+                tav?.show()
                 
                 break;
             case 1:
@@ -120,14 +119,14 @@ class MasterViewController: UITableViewController {
                 
                 //self.showToastAlert("5 Seconds", image: UIImage(named: "item0")!, hideWithTap: false, hideWithTime: true, hideTime: 5.0)
                 let tav =  ToastAlertView(message: "5 Seconds!", image: UIImage(named: "item0")! , hideWithTap: false, hideWithTime: true, hideTime: 5.0)
-                tav.show()
+                tav?.show()
                 
                 break;
             case 4:
                 
                 //self.showToastAlert("Tap", image: UIImage(named: "item0")!, hideWithTap: true, hideWithTime: false, hideTime: 5.0)
                 let tav =  ToastAlertView(message: "Tap", image: UIImage(named: "item0")! , hideWithTap: true, hideWithTime: false, hideTime: 0.0)
-                tav.show()
+                tav?.show()
                 
                 break;
             case 5:
@@ -137,7 +136,7 @@ class MasterViewController: UITableViewController {
                 ta.shouldDismissWithTime = false
                 ta.show()
                 
-                NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("hideAlert"), userInfo: nil, repeats: false)
+                Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(MasterViewController.hideAlert), userInfo: nil, repeats: false)
                 
                 break;
             default:

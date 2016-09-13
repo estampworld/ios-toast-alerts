@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ToastAlerts
 
 class DetailViewController: UIViewController {
 
@@ -36,11 +35,11 @@ class DetailViewController: UIViewController {
        
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
     }
     override func didReceiveMemoryWarning() {

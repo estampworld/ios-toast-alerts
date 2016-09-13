@@ -74,7 +74,7 @@
  @see show Function
  @see dismiss Function
  */
-- (instancetype) initWithMessage:(NSString *) message image:(UIImage *) image;
+- (instancetype) initWithMessage:(NSString *) message image:(UIImage *) image NS_DESIGNATED_INITIALIZER;
 
 /**
  Inits a Toast Alert View with a message and image
@@ -86,7 +86,7 @@
  @see show Function
  @see dismiss Function
  */
-- (instancetype) initWithMessage:(NSString *) message image:(UIImage *) image hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time;
+- (instancetype) initWithMessage:(NSString *) message image:(UIImage *) image hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time NS_DESIGNATED_INITIALIZER;
 
 /**
  Inits a Toast Alert View with a message and image
@@ -95,7 +95,7 @@
  @see show Function
  @see dismiss Function
  */
-- (instancetype) initWithMessage:(NSString *) message images:(NSArray *) images;
+- (instancetype) initWithMessage:(NSString *) message images:(NSArray *) images NS_DESIGNATED_INITIALIZER;
 
 /**
  Inits a Toast Alert View with a message and image
@@ -107,7 +107,7 @@
  @see show Function
  @see dismiss Function
  */
-- (instancetype) initWithMessage:(NSString *) message images:(NSArray *) images hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time;
+- (instancetype) initWithMessage:(NSString *) message images:(NSArray *) images hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time NS_DESIGNATED_INITIALIZER;
 
 /**
  Show a Toast Alert View with user configurations

@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F919DAFA1B7DC7B4006EA8D3 /* ToastAlerts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9D33AE51B7D5EDD00822D0E /* ToastAlerts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F9D33AE61B7D5EDD00822D0E /* ToastAlerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D33AE51B7D5EDD00822D0E /* ToastAlerts.framework */; };
+		F963EB6C1D886AF5008A3F0C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F963EB661D886AF5008A3F0C /* Info.plist */; };
+		F963EB6D1D886AF5008A3F0C /* ToastAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F963EB691D886AF5008A3F0C /* ToastAlertView.m */; };
+		F963EB6E1D886AF5008A3F0C /* UIViewController+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F963EB6B1D886AF5008A3F0C /* UIViewController+ext.m */; };
 		F9E50AAC1B75609A00B1423C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AAB1B75609A00B1423C /* AppDelegate.swift */; };
 		F9E50AAE1B75609A00B1423C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AAD1B75609A00B1423C /* MasterViewController.swift */; };
 		F9E50AB01B75609A00B1423C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AAF1B75609A00B1423C /* DetailViewController.swift */; };
@@ -40,7 +41,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F919DAFA1B7DC7B4006EA8D3 /* ToastAlerts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,7 +48,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F9D33AE51B7D5EDD00822D0E /* ToastAlerts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ToastAlerts.framework; sourceTree = "<group>"; };
+		F963EB641D8868FE008A3F0C /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		F963EB661D886AF5008A3F0C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F963EB671D886AF5008A3F0C /* ToastAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastAlerts.h; sourceTree = "<group>"; };
+		F963EB681D886AF5008A3F0C /* ToastAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastAlertView.h; sourceTree = "<group>"; };
+		F963EB691D886AF5008A3F0C /* ToastAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastAlertView.m; sourceTree = "<group>"; };
+		F963EB6A1D886AF5008A3F0C /* UIViewController+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ext.h"; sourceTree = "<group>"; };
+		F963EB6B1D886AF5008A3F0C /* UIViewController+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ext.m"; sourceTree = "<group>"; };
 		F9E50AA61B75609A00B1423C /* Toast Alert Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toast Alert Samples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E50AAA1B75609A00B1423C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9E50AAB1B75609A00B1423C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9D33AE61B7D5EDD00822D0E /* ToastAlerts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,10 +91,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F963EB651D886AF5008A3F0C /* ToastAlerts */ = {
+			isa = PBXGroup;
+			children = (
+				F963EB661D886AF5008A3F0C /* Info.plist */,
+				F963EB671D886AF5008A3F0C /* ToastAlerts.h */,
+				F963EB681D886AF5008A3F0C /* ToastAlertView.h */,
+				F963EB691D886AF5008A3F0C /* ToastAlertView.m */,
+				F963EB6A1D886AF5008A3F0C /* UIViewController+ext.h */,
+				F963EB6B1D886AF5008A3F0C /* UIViewController+ext.m */,
+			);
+			name = ToastAlerts;
+			path = ../../src/ToastAlerts;
+			sourceTree = "<group>";
+		};
 		F9E50A9D1B75609A00B1423C = {
 			isa = PBXGroup;
 			children = (
-				F9D33AE51B7D5EDD00822D0E /* ToastAlerts.framework */,
+				F963EB651D886AF5008A3F0C /* ToastAlerts */,
 				F9E50AA81B75609A00B1423C /* Toast Alert Samples */,
 				F9E50AC01B75609A00B1423C /* Toast Alert SamplesTests */,
 				F9E50AA71B75609A00B1423C /* Products */,
@@ -124,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				F9E50AAA1B75609A00B1423C /* Info.plist */,
+				F963EB641D8868FE008A3F0C /* Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -217,9 +237,11 @@
 				TargetAttributes = {
 					F9E50AA51B75609A00B1423C = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 					F9E50ABC1B75609A00B1423C = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 						TestTargetID = F9E50AA51B75609A00B1423C;
 					};
 				};
@@ -250,6 +272,7 @@
 			files = (
 				F9E50AB31B75609A00B1423C /* Main.storyboard in Resources */,
 				F9E50AB81B75609A00B1423C /* LaunchScreen.xib in Resources */,
+				F963EB6C1D886AF5008A3F0C /* Info.plist in Resources */,
 				F9E50B6F1B76F67E00B1423C /* item1.png in Resources */,
 				F9E50B701B76F67E00B1423C /* item2.png in Resources */,
 				F9E50AB51B75609A00B1423C /* Images.xcassets in Resources */,
@@ -274,8 +297,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E50AB01B75609A00B1423C /* DetailViewController.swift in Sources */,
+				F963EB6D1D886AF5008A3F0C /* ToastAlertView.m in Sources */,
 				F9E50AAE1B75609A00B1423C /* MasterViewController.swift in Sources */,
 				F9E50AAC1B75609A00B1423C /* AppDelegate.swift in Sources */,
+				F963EB6E1D886AF5008A3F0C /* UIViewController+ext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +441,8 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.estampworld.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Toast Alert Samples/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -434,6 +461,8 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.estampworld.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Toast Alert Samples/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -453,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.estampworld.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toast Alert Samples.app/Toast Alert Samples";
 			};
 			name = Debug;
@@ -469,6 +499,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.estampworld.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Toast Alert Samples.app/Toast Alert Samples";
 			};
 			name = Release;

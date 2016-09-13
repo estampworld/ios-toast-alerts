@@ -135,7 +135,7 @@
 
 - (void)deviceOrientationDidChange:(NSNotification *)notification {
     //Obtain current device orientation
-    [self setFrame:CGRectMake(0, 0, [self screenSize].width, [self screenSize].height) ];
+    self.frame = CGRectMake(0, 0, [self screenSize].width, [self screenSize].height) ;
 }
 
 #pragma mark - View Cycle
@@ -145,7 +145,7 @@
 }
 
 - (void) didMoveToWindow {
-    [self setFrame:CGRectMake(0, 0, [self screenSize].width, [self screenSize].height) ];
+    self.frame = CGRectMake(0, 0, [self screenSize].width, [self screenSize].height) ;
     
     self.backgroundColor = [UIColor clearColor];
     
@@ -232,7 +232,7 @@
     _messageLabel.text = self.message;
     _messageLabel.font = [UIFont systemFontOfSize:16.0];
     _messageLabel.textColor = [UIColor colorWithRed:90.0/255.0 green:94.0/255.0 blue:97.0/255.0 alpha:1.0];
-    [_messageLabel setTextAlignment:NSTextAlignmentCenter];
+    _messageLabel.textAlignment = NSTextAlignmentCenter;
     [_viewToast addSubview:_messageLabel];
     
     [_messageLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -289,7 +289,7 @@
 - (void) createalertImageView {
     _alertImageView = [[UIImageView alloc] init];
     _alertImageView.clipsToBounds = true;
-    [_alertImageView setContentMode:UIViewContentModeScaleAspectFit];
+    _alertImageView.contentMode = UIViewContentModeScaleAspectFit;
     
     [_viewToast addSubview:_alertImageView];
     
@@ -378,7 +378,7 @@
 #pragma mark - Display
 
 - (void) show {
-    UIWindow *frontWindow = [[UIApplication sharedApplication] keyWindow];
+    UIWindow *frontWindow = [UIApplication sharedApplication].keyWindow;
     [frontWindow addSubview:self];
 }
 
