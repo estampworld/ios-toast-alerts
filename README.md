@@ -1,4 +1,6 @@
-# iOS Toast Alert View Framework [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# iOS Toast Alert View Framework
+
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 A framework to display Toast Alerts in IOS.
 
@@ -17,19 +19,19 @@ A framework to display Toast Alerts in IOS.
 ## Usage
 
 ### Swift
-** Toast Alert View with Message & Image**
+** Toast Alert View with Message & Image **
 
 Show a Toast Alert with message and icon using a Extensions function
 ```
-self.showToastAlert("Hey!", image: UIImage(named: "CatIcon")!)
+self.showEWToastAlert("Hey!", image: UIImage(named: "CatIcon")!)
 ```
-Show a Toast Alert with message and icon using ToastAlertView Object
+Show a Toast Alert with message and icon using EWToastAlertView Object
 ```
-let tav =  ToastAlertView(message: "Hey!", image: UIImage(named: "Cat Icon")!)
+let tav =  EWToastAlertView(message: "Hey!", image: UIImage(named: "Cat Icon")!)
 tav.show()
 ```
 
-** Toast Alert View with Time Dissmis Only**
+** Toast Alert View with Time Dissmis Only **
 
 ```
 //Toast Alert View with Time Dissmis Only
@@ -40,7 +42,7 @@ self.showToastAlert("5 Seconds",
                     hideTime: 5.0)
 ```
 
-** Toast Alert View with Message & Image Animation**
+** Toast Alert View with Message & Image Animation **
 
 ```
 //Toast Alert View with Message & Image Animation
@@ -57,11 +59,11 @@ self.showToastAlert("Single Animation",
                       hideTime: 5.0)
 ```
 
-**Custom Toast Alert View Show**
+** Custom Toast Alert View Show **
 
 ```
-//Custom Toast Alert View
-let tav = ToastAlertView()
+//Custom EW Toast Alert View
+let tav = EWToastAlertView()
 tav.message = “Example”
 tav.image = UIImage(named: “img1”)!
 tav.show()
