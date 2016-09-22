@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9AF60A21D948E8C0052B1E4 /* EWToastAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AD21B75622A00B1423C /* EWToastAlertView.m */; };
+		F9AF60A31D948E8C0052B1E4 /* UIViewController+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E50B761B770AD600B1423C /* UIViewController+ext.m */; };
 		F9E50A871B75605200B1423C /* EWToastAlerts.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E50A861B75605200B1423C /* EWToastAlerts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9E50AD31B75622A00B1423C /* EWToastAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E50AD11B75622A00B1423C /* EWToastAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9E50AD41B75622A00B1423C /* EWToastAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AD21B75622A00B1423C /* EWToastAlertView.m */; };
 		F9E50B771B770AD600B1423C /* UIViewController+ext.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E50B751B770AD600B1423C /* UIViewController+ext.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9E50B781B770AD600B1423C /* UIViewController+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E50B761B770AD600B1423C /* UIViewController+ext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +61,7 @@
 				F9E50B761B770AD600B1423C /* UIViewController+ext.m */,
 				F9E50A841B75605200B1423C /* Supporting Files */,
 			);
-			name = EWToastAlerts;
-			path = ToastAlerts;
+			path = EWToastAlerts;
 			sourceTree = "<group>";
 		};
 		F9E50A841B75605200B1423C /* Supporting Files */ = {
@@ -154,8 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9E50AD41B75622A00B1423C /* EWToastAlertView.m in Sources */,
-				F9E50B781B770AD600B1423C /* UIViewController+ext.m in Sources */,
+				F9AF60A21D948E8C0052B1E4 /* EWToastAlertView.m in Sources */,
+				F9AF60A31D948E8C0052B1E4 /* UIViewController+ext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +265,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ToastAlerts/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/EWToastAlerts/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -291,7 +290,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ToastAlerts/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/EWToastAlerts/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

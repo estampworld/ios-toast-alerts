@@ -50,7 +50,7 @@ let images = [UIImage(named: "item0")!,
               UIImage(named: "item1")!,
               UIImage(named: "item2")!]
 
-self.showToastAlert("Single Animation",
+self.showEWToastAlert("Single Animation",
                       images: images,
                       frameDuration: 0.1,
                       repeatAnimation: false,

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F9DAD02E1D88A2C400F9BCD3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9DAD0281D88A2C400F9BCD3 /* Info.plist */; };
-		F9DAD02F1D88A2C400F9BCD3 /* EWToastAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DAD02B1D88A2C400F9BCD3 /* EWToastAlertView.m */; };
-		F9DAD0301D88A2C400F9BCD3 /* UIViewController+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DAD02D1D88A2C400F9BCD3 /* UIViewController+ext.m */; };
+		F9AF609F1D948D910052B1E4 /* EWToastAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AF609B1D948D910052B1E4 /* EWToastAlertView.m */; };
+		F9AF60A01D948D910052B1E4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9AF609C1D948D910052B1E4 /* Info.plist */; };
+		F9AF60A11D948D910052B1E4 /* UIViewController+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AF609E1D948D910052B1E4 /* UIViewController+ext.m */; };
 		F9E50AAC1B75609A00B1423C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AAB1B75609A00B1423C /* AppDelegate.swift */; };
 		F9E50AAE1B75609A00B1423C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AAD1B75609A00B1423C /* MasterViewController.swift */; };
 		F9E50AB01B75609A00B1423C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AAF1B75609A00B1423C /* DetailViewController.swift */; };
@@ -31,12 +31,12 @@
 
 /* Begin PBXFileReference section */
 		F963EB641D8868FE008A3F0C /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		F9DAD0281D88A2C400F9BCD3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9DAD0291D88A2C400F9BCD3 /* EWToastAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWToastAlerts.h; sourceTree = "<group>"; };
-		F9DAD02A1D88A2C400F9BCD3 /* EWToastAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWToastAlertView.h; sourceTree = "<group>"; };
-		F9DAD02B1D88A2C400F9BCD3 /* EWToastAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWToastAlertView.m; sourceTree = "<group>"; };
-		F9DAD02C1D88A2C400F9BCD3 /* UIViewController+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ext.h"; sourceTree = "<group>"; };
-		F9DAD02D1D88A2C400F9BCD3 /* UIViewController+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ext.m"; sourceTree = "<group>"; };
+		F9AF60991D948D910052B1E4 /* EWToastAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWToastAlerts.h; sourceTree = "<group>"; };
+		F9AF609A1D948D910052B1E4 /* EWToastAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWToastAlertView.h; sourceTree = "<group>"; };
+		F9AF609B1D948D910052B1E4 /* EWToastAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWToastAlertView.m; sourceTree = "<group>"; };
+		F9AF609C1D948D910052B1E4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9AF609D1D948D910052B1E4 /* UIViewController+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ext.h"; sourceTree = "<group>"; };
+		F9AF609E1D948D910052B1E4 /* UIViewController+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ext.m"; sourceTree = "<group>"; };
 		F9E50AA61B75609A00B1423C /* Toast Alert Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toast Alert Samples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E50AAA1B75609A00B1423C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9E50AAB1B75609A00B1423C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,24 +68,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F9DAD0271D88A2C400F9BCD3 /* ToastAlerts */ = {
+		F9AF60981D948D910052B1E4 /* EWToastAlerts */ = {
 			isa = PBXGroup;
 			children = (
-				F9DAD0281D88A2C400F9BCD3 /* Info.plist */,
-				F9DAD0291D88A2C400F9BCD3 /* EWToastAlerts.h */,
-				F9DAD02A1D88A2C400F9BCD3 /* EWToastAlertView.h */,
-				F9DAD02B1D88A2C400F9BCD3 /* EWToastAlertView.m */,
-				F9DAD02C1D88A2C400F9BCD3 /* UIViewController+ext.h */,
-				F9DAD02D1D88A2C400F9BCD3 /* UIViewController+ext.m */,
+				F9AF60991D948D910052B1E4 /* EWToastAlerts.h */,
+				F9AF609A1D948D910052B1E4 /* EWToastAlertView.h */,
+				F9AF609B1D948D910052B1E4 /* EWToastAlertView.m */,
+				F9AF609C1D948D910052B1E4 /* Info.plist */,
+				F9AF609D1D948D910052B1E4 /* UIViewController+ext.h */,
+				F9AF609E1D948D910052B1E4 /* UIViewController+ext.m */,
 			);
-			name = ToastAlerts;
-			path = ../ToastAlerts;
+			name = EWToastAlerts;
+			path = ../EWToastAlerts;
 			sourceTree = "<group>";
 		};
 		F9E50A9D1B75609A00B1423C = {
 			isa = PBXGroup;
 			children = (
-				F9DAD0271D88A2C400F9BCD3 /* ToastAlerts */,
+				F9AF60981D948D910052B1E4 /* EWToastAlerts */,
 				F9E50AA81B75609A00B1423C /* Toast Alert Samples */,
 				F9E50AC01B75609A00B1423C /* Toast Alert SamplesTests */,
 				F9E50AA71B75609A00B1423C /* Products */,
@@ -225,9 +225,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9AF60A01D948D910052B1E4 /* Info.plist in Resources */,
 				F9E50AB31B75609A00B1423C /* Main.storyboard in Resources */,
 				F9E50AB81B75609A00B1423C /* LaunchScreen.xib in Resources */,
-				F9DAD02E1D88A2C400F9BCD3 /* Info.plist in Resources */,
 				F9E50AB51B75609A00B1423C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,10 +247,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E50AB01B75609A00B1423C /* DetailViewController.swift in Sources */,
-				F9DAD02F1D88A2C400F9BCD3 /* EWToastAlertView.m in Sources */,
 				F9E50AAE1B75609A00B1423C /* MasterViewController.swift in Sources */,
 				F9E50AAC1B75609A00B1423C /* AppDelegate.swift in Sources */,
-				F9DAD0301D88A2C400F9BCD3 /* UIViewController+ext.m in Sources */,
+				F9AF609F1D948D910052B1E4 /* EWToastAlertView.m in Sources */,
+				F9AF60A11D948D910052B1E4 /* UIViewController+ext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

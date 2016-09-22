@@ -15,7 +15,7 @@
  @param message The message to display
  @param image The image to display
  */
-- (void) showToastAlert: (nonnull NSString *) message image:(nonnull UIImage *) image;
+- (void) showEWToastAlert: (nonnull NSString *) message image:(nonnull UIImage *) image;
 
 /**
  Show a Toast Alert View with a message and single image
@@ -25,14 +25,14 @@
  @param timeHide Should the Toast Alert View dismiss with Time
  @param time if timeHide is true, this is the time it will take to hide
  */
-- (void) showToastAlert: (nonnull NSString *) message image:(nonnull UIImage *) image hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time;
+- (void) showEWToastAlert: (nonnull NSString *) message image:(nonnull UIImage *) image hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time;
 
 /**
  Show a Toast Alert View with a message and single image
  @param message The message to display
  @param images The images animation to display
  */
-- (void) showToastAlert: (nonnull NSString *) message images:(nonnull NSArray <UIImage *> *) images;
+- (void) showEWToastAlert: (nonnull NSString *) message images:(nonnull NSArray <UIImage *> *) images;
 
 /**
  Show a Toast Alert View with a message and single image
@@ -43,6 +43,6 @@
  @param timeHide Should the Toast Alert View dismiss with Time
  @param time if timeHide is true, this is the time it will take to hide
  */
-- (void) showToastAlert: (nonnull NSString *) message images:(nonnull NSArray *) images frameDuration:(double) frameTime  repeatAnimation: (BOOL) repeatAnimation hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time;
+- (void) showEWToastAlert: (nonnull NSString *) message images:(nonnull NSArray *) images frameDuration:(double) frameTime  repeatAnimation: (BOOL) repeatAnimation hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ToastAlertView : UIView < UIGestureRecognizerDelegate>
+@interface EWToastAlertView : UIView < UIGestureRecognizerDelegate>
 
 #pragma mark - Attributes
 
