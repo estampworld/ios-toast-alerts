@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F9E50A871B75605200B1423C /* ToastAlerts.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E50A861B75605200B1423C /* ToastAlerts.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9E50AD31B75622A00B1423C /* ToastAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E50AD11B75622A00B1423C /* ToastAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9E50AD41B75622A00B1423C /* ToastAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AD21B75622A00B1423C /* ToastAlertView.m */; };
+		F9E50A871B75605200B1423C /* EWToastAlerts.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E50A861B75605200B1423C /* EWToastAlerts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9E50AD31B75622A00B1423C /* EWToastAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E50AD11B75622A00B1423C /* EWToastAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9E50AD41B75622A00B1423C /* EWToastAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AD21B75622A00B1423C /* EWToastAlertView.m */; };
 		F9E50B771B770AD600B1423C /* UIViewController+ext.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E50B751B770AD600B1423C /* UIViewController+ext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9E50B781B770AD600B1423C /* UIViewController+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E50B761B770AD600B1423C /* UIViewController+ext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F9E50A811B75605200B1423C /* ToastAlerts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ToastAlerts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9E50A811B75605200B1423C /* EWToastAlerts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EWToastAlerts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E50A851B75605200B1423C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9E50A861B75605200B1423C /* ToastAlerts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToastAlerts.h; sourceTree = "<group>"; };
-		F9E50AD11B75622A00B1423C /* ToastAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastAlertView.h; sourceTree = "<group>"; };
-		F9E50AD21B75622A00B1423C /* ToastAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastAlertView.m; sourceTree = "<group>"; };
+		F9E50A861B75605200B1423C /* EWToastAlerts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EWToastAlerts.h; sourceTree = "<group>"; };
+		F9E50AD11B75622A00B1423C /* EWToastAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWToastAlertView.h; sourceTree = "<group>"; };
+		F9E50AD21B75622A00B1423C /* EWToastAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWToastAlertView.m; sourceTree = "<group>"; };
 		F9E50B751B770AD600B1423C /* UIViewController+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ext.h"; sourceTree = "<group>"; };
 		F9E50B761B770AD600B1423C /* UIViewController+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ext.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,7 +38,7 @@
 		F9E50A771B75605200B1423C = {
 			isa = PBXGroup;
 			children = (
-				F9E50A831B75605200B1423C /* ToastAlerts */,
+				F9E50A831B75605200B1423C /* EWToastAlerts */,
 				F9E50A821B75605200B1423C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,21 +46,22 @@
 		F9E50A821B75605200B1423C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F9E50A811B75605200B1423C /* ToastAlerts.framework */,
+				F9E50A811B75605200B1423C /* EWToastAlerts.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F9E50A831B75605200B1423C /* ToastAlerts */ = {
+		F9E50A831B75605200B1423C /* EWToastAlerts */ = {
 			isa = PBXGroup;
 			children = (
-				F9E50A861B75605200B1423C /* ToastAlerts.h */,
-				F9E50AD11B75622A00B1423C /* ToastAlertView.h */,
-				F9E50AD21B75622A00B1423C /* ToastAlertView.m */,
+				F9E50A861B75605200B1423C /* EWToastAlerts.h */,
+				F9E50AD11B75622A00B1423C /* EWToastAlertView.h */,
+				F9E50AD21B75622A00B1423C /* EWToastAlertView.m */,
 				F9E50B751B770AD600B1423C /* UIViewController+ext.h */,
 				F9E50B761B770AD600B1423C /* UIViewController+ext.m */,
 				F9E50A841B75605200B1423C /* Supporting Files */,
 			);
+			name = EWToastAlerts;
 			path = ToastAlerts;
 			sourceTree = "<group>";
 		};
@@ -79,18 +80,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9E50A871B75605200B1423C /* ToastAlerts.h in Headers */,
+				F9E50A871B75605200B1423C /* EWToastAlerts.h in Headers */,
 				F9E50B771B770AD600B1423C /* UIViewController+ext.h in Headers */,
-				F9E50AD31B75622A00B1423C /* ToastAlertView.h in Headers */,
+				F9E50AD31B75622A00B1423C /* EWToastAlertView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F9E50A801B75605200B1423C /* ToastAlerts */ = {
+		F9E50A801B75605200B1423C /* EWToastAlerts */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F9E50A971B75605200B1423C /* Build configuration list for PBXNativeTarget "ToastAlerts" */;
+			buildConfigurationList = F9E50A971B75605200B1423C /* Build configuration list for PBXNativeTarget "EWToastAlerts" */;
 			buildPhases = (
 				F9E50A7C1B75605200B1423C /* Sources */,
 				F9E50A7D1B75605200B1423C /* Frameworks */,
@@ -101,9 +102,9 @@
 			);
 			dependencies = (
 			);
-			name = ToastAlerts;
+			name = EWToastAlerts;
 			productName = ToastAlerts;
-			productReference = F9E50A811B75605200B1423C /* ToastAlerts.framework */;
+			productReference = F9E50A811B75605200B1423C /* EWToastAlerts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -112,15 +113,16 @@
 		F9E50A781B75605200B1423C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = EW;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = "Estamp World";
+				ORGANIZATIONNAME = Estamp;
 				TargetAttributes = {
 					F9E50A801B75605200B1423C = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
-			buildConfigurationList = F9E50A7B1B75605200B1423C /* Build configuration list for PBXProject "ToastAlerts" */;
+			buildConfigurationList = F9E50A7B1B75605200B1423C /* Build configuration list for PBXProject "EWToastAlerts" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -132,7 +134,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F9E50A801B75605200B1423C /* ToastAlerts */,
+				F9E50A801B75605200B1423C /* EWToastAlerts */,
 			);
 		};
 /* End PBXProject section */
@@ -152,7 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9E50AD41B75622A00B1423C /* ToastAlertView.m in Sources */,
+				F9E50AD41B75622A00B1423C /* EWToastAlertView.m in Sources */,
 				F9E50B781B770AD600B1423C /* UIViewController+ext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,7 +272,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.estampworld.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.estamp.ToastAlerts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -295,7 +297,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.estampworld.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.estamp.ToastAlerts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -305,7 +307,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F9E50A7B1B75605200B1423C /* Build configuration list for PBXProject "ToastAlerts" */ = {
+		F9E50A7B1B75605200B1423C /* Build configuration list for PBXProject "EWToastAlerts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9E50A951B75605200B1423C /* Debug */,
@@ -314,7 +316,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F9E50A971B75605200B1423C /* Build configuration list for PBXNativeTarget "ToastAlerts" */ = {
+		F9E50A971B75605200B1423C /* Build configuration list for PBXNativeTarget "EWToastAlerts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9E50A981B75605200B1423C /* Debug */,

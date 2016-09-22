@@ -19,6 +19,7 @@ class MasterViewController: UITableViewController {
         ["title" : "Toast with Tap Dissmis", "detail" : "Toast hides with Tap only"],
         ["title" : "Toast Custom", "detail" : "Toast with manual dismis"]]
 
+    var ta = EWToastAlertView()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,8 +29,6 @@ class MasterViewController: UITableViewController {
         }
     }
 
-    var ta : ToastAlertView! = ToastAlertView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -91,8 +90,8 @@ class MasterViewController: UITableViewController {
             switch (indexPath as NSIndexPath).row {
             case 0:
                 
-                //self.showToastAlert("Hey!", image: UIImage(named: "Cat Icon")!)
-                let tav =  ToastAlertView(message: "Hey!", image: UIImage(named: "Cat Icon")!)
+                //self.showEWToastAlert("Hey!", image: UIImage(named: "Cat Icon")!)
+                let tav =  EWToastAlertView(message: "Hey!", image: UIImage(named: "Cat Icon")!)
                 tav.show()
                 
                 break;
@@ -101,16 +100,16 @@ class MasterViewController: UITableViewController {
                 
                 
                 let images = [ UIImage(named: "Item 5")!, UIImage(named: "Item 4")!, UIImage(named: "Item 3")!, UIImage(named: "Item 2")!,UIImage(named: "Item 1")! ]
-                self.showToastAlert("Single Animation", images: images, frameDuration: 0.1, repeatAnimation: false, hideWithTap: true, hideWithTime: true, hideTime: 5.0)
+                self.showEWToastAlert("Single Animation", images: images, frameDuration: 0.1, repeatAnimation: false, hideWithTap: true, hideWithTime: true, hideTime: 5.0)
                 
                 break;
             case 2:
                 
                 let images = [UIImage(named: "Item 1")!, UIImage(named: "Item 2")!, UIImage(named: "Item 3")!, UIImage(named: "Item 4")!,UIImage(named: "Item 5")!, UIImage(named: "Item 5")!, UIImage(named: "Item 4")!, UIImage(named: "Item 3")!, UIImage(named: "Item 2")!,UIImage(named: "Item 1")! ]
                 
-                self.showToastAlert("Repeating", images: images, frameDuration: 0.1, repeatAnimation: true, hideWithTap: true, hideWithTime: true, hideTime: 5.0)
+                self.showEWToastAlert("Repeating", images: images, frameDuration: 0.1, repeatAnimation: true, hideWithTap: true, hideWithTime: true, hideTime: 5.0)
                 
-                //let tav =  ToastAlertView(message: "Repeating", images: images, hideWithTap: true, hideWithTime: true, hideTime: 2.0)
+                //let tav =  EWToastAlertView(message: "Repeating", images: images, hideWithTap: true, hideWithTime: true, hideTime: 2.0)
                 //tav.show()
                 
                 break;
@@ -118,20 +117,20 @@ class MasterViewController: UITableViewController {
             case 3:
                 
                 //self.showToastAlert("5 Seconds", image: UIImage(named: "Item 1")!, hideWithTap: false, hideWithTime: true, hideTime: 5.0)
-                let tav =  ToastAlertView(message: "5 Seconds!", image: UIImage(named: "Item 1")! , hideWithTap: false, hideWithTime: true, hideTime: 5.0)
+                let tav =  EWToastAlertView(message: "5 Seconds!", image: UIImage(named: "Item 1")! , hideWithTap: false, hideWithTime: true, hideTime: 5.0)
                 tav.show()
                 
                 break;
             case 4:
                 
                 //self.showToastAlert("Tap", image: UIImage(named: "Item 1")!, hideWithTap: true, hideWithTime: false, hideTime: 5.0)
-                let tav =  ToastAlertView(message: "Tap", image: UIImage(named: "Item 1")! , hideWithTap: true, hideWithTime: false, hideTime: 0.0)
+                let tav =  EWToastAlertView(message: "Tap", image: UIImage(named: "Item 1")! , hideWithTap: true, hideWithTime: false, hideTime: 0.0)
                 tav.show()
                 
                 break;
             case 5:
                 
-                ta = ToastAlertView(message: "Custom", image: UIImage(named: "Cat Icon")!)
+                ta = EWToastAlertView(message: "Custom", image: UIImage(named: "Cat Icon")!)
                 ta.shouldDismissWithTap = false
                 ta.shouldDismissWithTime = false
                 ta.show()

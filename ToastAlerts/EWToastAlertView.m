@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Estamp World. All rights reserved.
 //
 
-#import "ToastAlertView.h"
+#import "EWToastAlertView.h"
 #import "UIViewController+ext.h"
 
-@interface ToastAlertView ()
+@interface EWToastAlertView ()
 
 @property UIView *viewToast;
 @property UILabel *messageLabel;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation ToastAlertView
+@implementation EWToastAlertView
 //
 //@synthesize frameSize;
 //@synthesize shouldDismissWithTap;

@@ -7,29 +7,29 @@
 //
 
 #import "UIViewController+ext.h"
-#import "ToastAlertView.h"
+#import "EWToastAlertView.h"
 
 @implementation UIViewController (ext)
 
-- (void) showToastAlert: (NSString *) message image:(UIImage *) image  {
+- (void) showEWToastAlert: (NSString *) message image:(UIImage *) image  {
     
-   [self showToastAlert:message image:image hideWithTap:true hideWithTime:true hideTime:2.0];
-    
-}
-
-- (void) showToastAlert: (NSString *) message image:(UIImage *) image hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time {
-    
-    [self showToastAlert:message images:@[image] frameDuration:0.2 repeatAnimation:false hideWithTap:tapHide hideWithTime:timeHide hideTime:time];
+   [self showEWToastAlert:message image:image hideWithTap:true hideWithTime:true hideTime:2.0];
     
 }
 
-- (void) showToastAlert: (NSString *) message images:(NSArray *) images {
-    [self showToastAlert:message images:images frameDuration:0.2 repeatAnimation:true hideWithTap:true hideWithTime:true hideTime:2.0];
+- (void) showEWToastAlert: (NSString *) message image:(UIImage *) image hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time {
+    
+    [self showEWToastAlert:message images:@[image] frameDuration:0.2 repeatAnimation:false hideWithTap:tapHide hideWithTime:timeHide hideTime:time];
+    
 }
 
-- (void) showToastAlert: (NSString *) message images:(NSArray *) images frameDuration:(double) frameTime  repeatAnimation: (BOOL) repeatAnimation hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time {
+- (void) showEWToastAlert: (NSString *) message images:(NSArray *) images {
+    [self showEWToastAlert:message images:images frameDuration:0.2 repeatAnimation:true hideWithTap:true hideWithTime:true hideTime:2.0];
+}
+
+- (void) showEWToastAlert: (NSString *) message images:(NSArray *) images frameDuration:(double) frameTime  repeatAnimation: (BOOL) repeatAnimation hideWithTap:(BOOL) tapHide hideWithTime:(BOOL) timeHide hideTime:(double) time {
     
-    ToastAlertView *toastViewController = [[ToastAlertView alloc] init];
+    EWToastAlertView *toastViewController = [[EWToastAlertView alloc] init];
     
     toastViewController.shouldDismissWithTap = tapHide;
     toastViewController.shouldDismissWithTime = timeHide;

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ToastAlerts.xcodeproj">
+      location = "self:/Users/eduardoirias/Developer/Xcode/ios-toast-alerts/EWToastAlerts.xcodeproj">
    </FileRef>
 </Workspace>
