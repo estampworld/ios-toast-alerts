@@ -134,7 +134,7 @@ class MasterViewController: UITableViewController {
         
     }
     
-    func hideAlert() {
+    @objc func hideAlert() {
         ta.dismiss()
     }
 

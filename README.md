@@ -16,10 +16,19 @@ A framework to display Toast Alerts in IOS.
 * Toast View with Tap Dismiss
 * Custom Toast View
 
+## Install
+
+Add the following line to your Cartfile:
+```
+github "estampworld/ios-toast-alerts"
+```
+Run `carthage update`
+
+
 ## Usage
 
 ### Swift
-** Toast Alert View with Message & Image **
+#### Toast Alert View with Message & Image
 
 Show a Toast Alert with message and icon using a Extensions function
 ```
@@ -31,7 +40,7 @@ let tav =  EWToastAlertView(message: "Hey!", image: UIImage(named: "Cat Icon")!)
 tav.show()
 ```
 
-** Toast Alert View with Time Dissmis Only **
+#### Toast Alert View with Time Dissmis Only
 
 ```
 //Toast Alert View with Time Dissmis Only
@@ -42,7 +51,7 @@ self.showToastAlert("5 Seconds",
                     hideTime: 5.0)
 ```
 
-** Toast Alert View with Message & Image Animation **
+#### Toast Alert View with Message & Image Animation
 
 ```
 //Toast Alert View with Message & Image Animation
@@ -59,7 +68,7 @@ self.showEWToastAlert("Single Animation",
                       hideTime: 5.0)
 ```
 
-** Custom Toast Alert View Show **
+#### Custom Toast Alert View Show
 
 ```
 //Custom EW Toast Alert View
