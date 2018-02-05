@@ -40,15 +40,15 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F9E50A8B1B75605200B1423C"
-               BuildableName = "ToastAlertsTests.xctest"
-               BlueprintName = "ToastAlertsTests"
+               BlueprintIdentifier = "F91EE4B72027D0E700F402B0"
+               BuildableName = "EWToastAlertsTests.xctest"
+               BlueprintName = "EWToastAlertsTests"
                ReferencedContainer = "container:EWToastAlerts.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -65,9 +65,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F9E50A8B1B75605200B1423C"
-               BuildableName = "ToastAlertsTests.xctest"
-               BlueprintName = "ToastAlertsTests"
+               BlueprintIdentifier = "F91EE4B72027D0E700F402B0"
+               BuildableName = "EWToastAlertsTests.xctest"
+               BlueprintName = "EWToastAlertsTests"
                ReferencedContainer = "container:EWToastAlerts.xcodeproj">
             </BuildableReference>
          </TestableReference>
