@@ -2,6 +2,8 @@
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+[![Build Status](https://www.bitrise.io/app/d9f915328e4e9274/status.svg?token=mni5O-oZ_vPTNfbzqAEGGw&branch=master)](https://www.bitrise.io/app/d9f915328e4e9274)
+
 A framework to display Toast Alerts in IOS.
 
 [More Info](http://www.estamp.co/ios-toast-view/)
@@ -17,6 +19,8 @@ A framework to display Toast Alerts in IOS.
 * Custom Toast View
 
 ## Install
+
+### Carthage
 
 Add the following line to your Cartfile:
 ```
