@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F91EE4BB2027D0E700F402B0 /* EWToastAlertsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F91EE4BA2027D0E700F402B0 /* EWToastAlertsTests.m */; };
+		F91EE4BD2027D0E700F402B0 /* EWToastAlerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E50A811B75605200B1423C /* EWToastAlerts.framework */; };
 		F9AF60A21D948E8C0052B1E4 /* EWToastAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E50AD21B75622A00B1423C /* EWToastAlertView.m */; };
 		F9AF60A31D948E8C0052B1E4 /* UIViewController+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E50B761B770AD600B1423C /* UIViewController+ext.m */; };
 		F9E50A871B75605200B1423C /* EWToastAlerts.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E50A861B75605200B1423C /* EWToastAlerts.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -14,8 +16,21 @@
 		F9E50B771B770AD600B1423C /* UIViewController+ext.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E50B751B770AD600B1423C /* UIViewController+ext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F91EE4BE2027D0E700F402B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9E50A781B75605200B1423C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9E50A801B75605200B1423C;
+			remoteInfo = EWToastAlerts;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		F91EE4A42027CE5500F402B0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F91EE4B82027D0E700F402B0 /* EWToastAlertsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EWToastAlertsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F91EE4BA2027D0E700F402B0 /* EWToastAlertsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EWToastAlertsTests.m; sourceTree = "<group>"; };
+		F91EE4BC2027D0E700F402B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9E50A811B75605200B1423C /* EWToastAlerts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EWToastAlerts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E50A851B75605200B1423C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9E50A861B75605200B1423C /* EWToastAlerts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EWToastAlerts.h; sourceTree = "<group>"; };
@@ -26,6 +41,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F91EE4B52027D0E700F402B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91EE4BD2027D0E700F402B0 /* EWToastAlerts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9E50A7D1B75605200B1423C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -36,11 +59,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F91EE4B92027D0E700F402B0 /* EWToastAlertsTests */ = {
+			isa = PBXGroup;
+			children = (
+				F91EE4BA2027D0E700F402B0 /* EWToastAlertsTests.m */,
+				F91EE4BC2027D0E700F402B0 /* Info.plist */,
+			);
+			path = EWToastAlertsTests;
+			sourceTree = "<group>";
+		};
 		F9E50A771B75605200B1423C = {
 			isa = PBXGroup;
 			children = (
 				F91EE4A42027CE5500F402B0 /* README.md */,
 				F9E50A831B75605200B1423C /* EWToastAlerts */,
+				F91EE4B92027D0E700F402B0 /* EWToastAlertsTests */,
 				F9E50A821B75605200B1423C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				F9E50A811B75605200B1423C /* EWToastAlerts.framework */,
+				F91EE4B82027D0E700F402B0 /* EWToastAlertsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +124,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		F91EE4B72027D0E700F402B0 /* EWToastAlertsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F91EE4C02027D0E700F402B0 /* Build configuration list for PBXNativeTarget "EWToastAlertsTests" */;
+			buildPhases = (
+				F91EE4B42027D0E700F402B0 /* Sources */,
+				F91EE4B52027D0E700F402B0 /* Frameworks */,
+				F91EE4B62027D0E700F402B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F91EE4BF2027D0E700F402B0 /* PBXTargetDependency */,
+			);
+			name = EWToastAlertsTests;
+			productName = EWToastAlertsTests;
+			productReference = F91EE4B82027D0E700F402B0 /* EWToastAlertsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F9E50A801B75605200B1423C /* EWToastAlerts */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9E50A971B75605200B1423C /* Build configuration list for PBXNativeTarget "EWToastAlerts" */;
@@ -115,9 +167,14 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = EW;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Estamp;
 				TargetAttributes = {
+					F91EE4B72027D0E700F402B0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+					};
 					F9E50A801B75605200B1423C = {
 						CreatedOnToolsVersion = 6.4;
 					};
@@ -136,11 +193,19 @@
 			projectRoot = "";
 			targets = (
 				F9E50A801B75605200B1423C /* EWToastAlerts */,
+				F91EE4B72027D0E700F402B0 /* EWToastAlertsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F91EE4B62027D0E700F402B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9E50A7F1B75605200B1423C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,6 +216,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F91EE4B42027D0E700F402B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91EE4BB2027D0E700F402B0 /* EWToastAlertsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9E50A7C1B75605200B1423C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,7 +235,62 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F91EE4BF2027D0E700F402B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9E50A801B75605200B1423C /* EWToastAlerts */;
+			targetProxy = F91EE4BE2027D0E700F402B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F91EE4C12027D0E700F402B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = EWToastAlertsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.estamp.EWToastAlertsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F91EE4C22027D0E700F402B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = EWToastAlertsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.estamp.EWToastAlertsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F9E50A951B75605200B1423C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -320,6 +448,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F91EE4C02027D0E700F402B0 /* Build configuration list for PBXNativeTarget "EWToastAlertsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F91EE4C12027D0E700F402B0 /* Debug */,
+				F91EE4C22027D0E700F402B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F9E50A7B1B75605200B1423C /* Build configuration list for PBXProject "EWToastAlerts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

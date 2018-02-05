@@ -38,7 +38,7 @@
  Show a Toast Alert View with a message and single image
  @param message The message to display
  @param images The images animation to display
- @param frameDuration the image frame time to display
+ @param frameTime the image frame time to display
  @param tapHide Should the Toast Alert View dismiss with Tap
  @param timeHide Should the Toast Alert View dismiss with Time
  @param time if timeHide is true, this is the time it will take to hide

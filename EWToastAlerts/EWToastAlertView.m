@@ -18,16 +18,6 @@
 @end
 
 @implementation EWToastAlertView
-//
-//@synthesize frameSize;
-//@synthesize shouldDismissWithTap;
-//@synthesize shouldDismissWithTime;
-//@synthesize dismissTime;
-//////@synthesize message;
-////@synthesize image;
-//@synthesize images;
-//@synthesize shouldRepeatImagesAnimation;
-//@synthesize timeForImagesInAnimation;
 
 #pragma mark - Init
 
