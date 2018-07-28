@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-NS_SWIFT_NAME(ToastAlertView)
 @interface EWToastAlertView : UIView < UIGestureRecognizerDelegate>
 
 #pragma mark - Attributes

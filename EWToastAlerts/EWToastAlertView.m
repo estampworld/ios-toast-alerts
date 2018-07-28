@@ -172,7 +172,7 @@
 #pragma mark - SubViews
 
 - (void) createViewToast {
-    _viewToast = [[UIView alloc] init];
+    _viewToast = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frameSize, self.frameSize) ];
     _viewToast.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:223.0/255.0 blue:227.0/255.0 alpha:1.0];
     _viewToast.layer.cornerRadius = 10;
     _viewToast.layer.masksToBounds = YES;
