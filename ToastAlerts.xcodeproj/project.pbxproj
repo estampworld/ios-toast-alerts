@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6116592C23E468A900A46184 /* ToastAlerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6116592223E468A900A46184 /* ToastAlerts.framework */; };
-		6116593123E468A900A46184 /* Toast_AlertsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6116593023E468A900A46184 /* Toast_AlertsTests.swift */; };
+		6116593123E468A900A46184 /* ToastAlertsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6116593023E468A900A46184 /* ToastAlertsViewTests.swift */; };
 		6116593323E468A900A46184 /* Toast_Alerts.h in Headers */ = {isa = PBXBuildFile; fileRef = 6116592523E468A900A46184 /* Toast_Alerts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6116593F23E4698E00A46184 /* ToastAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6116593E23E4698E00A46184 /* ToastAlertView.swift */; };
 /* End PBXBuildFile section */
@@ -28,7 +28,7 @@
 		6116592523E468A900A46184 /* Toast_Alerts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toast_Alerts.h; sourceTree = "<group>"; };
 		6116592623E468A900A46184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6116592B23E468A900A46184 /* ToastAlertsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToastAlertsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6116593023E468A900A46184 /* Toast_AlertsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast_AlertsTests.swift; sourceTree = "<group>"; };
+		6116593023E468A900A46184 /* ToastAlertsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAlertsViewTests.swift; sourceTree = "<group>"; };
 		6116593223E468A900A46184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6116593E23E4698E00A46184 /* ToastAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,7 +83,7 @@
 		6116592F23E468A900A46184 /* Toast AlertsTests */ = {
 			isa = PBXGroup;
 			children = (
-				6116593023E468A900A46184 /* Toast_AlertsTests.swift */,
+				6116593023E468A900A46184 /* ToastAlertsViewTests.swift */,
 				6116593223E468A900A46184 /* Info.plist */,
 			);
 			path = "Toast AlertsTests";
@@ -223,7 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6116593123E468A900A46184 /* Toast_AlertsTests.swift in Sources */,
+				6116593123E468A900A46184 /* ToastAlertsViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +412,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Toast AlertsTests/Info.plist";
+				INFOPLIST_FILE = "Tests/Toast AlertsTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,7 +430,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Toast AlertsTests/Info.plist";
+				INFOPLIST_FILE = "Tests/Toast AlertsTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

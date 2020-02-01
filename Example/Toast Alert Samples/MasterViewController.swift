@@ -87,13 +87,10 @@ class MasterViewController: UITableViewController {
         if let indexPath = self.tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
             
-            
             switch (indexPath as NSIndexPath).row {
             case 0:
-                                
-//                let toastAlertView =  ToastAlertView(message: "Added to Library!", image: #imageLiteral(resourceName: "CatIcon"))
-//                toastAlertView.show()
-break
+                let toastAlertView = ToastAlertView(message: "Added to Library!", image: #imageLiteral(resourceName: "CatIcon"))
+                toastAlertView.show()
             default:
                 break
             }

@@ -10,6 +10,9 @@ import UIKit
 
 public class ToastAlertView: UIView {
     
+    private let size = CGSize(width: 250, height: 266)
+    static let toastTextColor = UIColor(red: 116.0 / 255.0, green: 117.0 / 255.0, blue: 119.0 / 255.0, alpha: 1.0)
+    
     // MARK: - Attributes
 
     /**
@@ -52,12 +55,20 @@ public class ToastAlertView: UIView {
     /**
      The message that should be display
      */
-    var message = ""
+    var message: String? {
+        didSet {
+            messageLabel?.text = message
+        }
+    }
     
     /**
      The image that should be display
      */
-    var image: UIImage?
+    var image: UIImage? {
+        didSet {
+            alertImageView?.image = image
+        }
+    }
     /**
      The images that should be display
      @see timeForImagesInAnimation
@@ -65,32 +76,36 @@ public class ToastAlertView: UIView {
      */
     var images: [UIImage]?
 
-    private var messageLabel: UILabel!
+    private var messageLabel: UILabel?
     private var alertImageView: UIImageView?
     
-    private let size = CGSize(width: 250, height: 266)
-    static let toastTextColor = UIColor(red: 116.0 / 255.0, green: 117.0 / 255.0, blue: 119.0 / 255.0, alpha: 1.0)
+    // MARK: - Init
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        setVars()
+        layoutDisplay()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     public init(message: String, image: UIImage) {
         super.init(frame: CGRect.zero)
+        
+        layoutDisplay()
+        addMessageLabel()
+        addImageView()
         
         self.message = message
         self.image = image
         
+        messageLabel?.text = message
+        alertImageView?.image = image
+        
         self.shouldDismissWithTap = true
         self.shouldDismissWithTime = true
         
-        setVars()
     }
     
     /*
@@ -148,21 +163,67 @@ public class ToastAlertView: UIView {
         return self
     }
      */
-    func setVars() {
+    
+    // MARK: - UI
+    
+    private func addMessageLabel() {
+
+        messageLabel = UILabel()
+        
+        guard let messageLabel = messageLabel else { return }
+        
+        messageLabel.numberOfLines = 0
+        messageLabel.text = message
+        messageLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        messageLabel.textColor = ToastAlertView.toastTextColor
+        messageLabel.textAlignment = .center
+        
+        self.addSubview(messageLabel)
+        
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0))
+
+        self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0))
+
+        self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0))
+
+    }
+    
+    private func addImageView() {
+        alertImageView = UIImageView()
+        
+        guard let alertImageView = alertImageView else { return }
+        
+        let padding: CGFloat = 52
+        
+        alertImageView.clipsToBounds = true
+        alertImageView.contentMode = .scaleAspectFit
+        alertImageView.image = image
+        alertImageView.tintColor = ToastAlertView.toastTextColor
+        self.addSubview(alertImageView)
+        
+        alertImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 132 ))
+        
+        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailingMargin, multiplier: 1, constant: -padding))
+        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leadingMargin, multiplier: 1, constant: padding))
+        
+        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .topMargin, multiplier: 1, constant: padding))
+        
+        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .bottom, relatedBy: .equal, toItem: messageLabel, attribute: .top, multiplier: 1, constant: 0))
+    }
+    
+    private func layoutDisplay() {
         reCenter()
 
-        
         dismissTime = 2.0
-//        timeForImagesInAnimation = 0.2
-//        images = []
-//        shouldRepeatImagesAnimation = true
-//        frameSize = 155
-//
-//
-        self.backgroundColor = UIColor.clear //UIColor(red: 222.0 / 255.0, green: 223.0 / 255.0, blue: 227.0 / 255.0, alpha: 0.4)
+        
+        self.backgroundColor = UIColor.clear
         self.layer.cornerRadius = 8
         self.layer.masksToBounds = true
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(reCenter), name: UIDevice.orientationDidChangeNotification, object: nil)
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.prominent)
         
@@ -171,43 +232,6 @@ public class ToastAlertView: UIView {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         blurEffectView.alpha = 0.9
         self.addSubview(blurEffectView)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(reCenter), name: UIDevice.orientationDidChangeNotification, object: nil)
-
-        messageLabel = UILabel()
-        messageLabel.numberOfLines = 0
-        messageLabel?.text = message
-        messageLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        messageLabel?.textColor = ToastAlertView.toastTextColor
-        messageLabel?.textAlignment = .center
-        self.addSubview(messageLabel!)
-        
-        messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        let padding: CGFloat = 52
-        
-        self.addConstraint(NSLayoutConstraint(item: messageLabel!, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0))
-
-        self.addConstraint(NSLayoutConstraint(item: messageLabel!, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0))
-
-        self.addConstraint(NSLayoutConstraint(item: messageLabel!, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0))
-
-        alertImageView = UIImageView()
-        alertImageView?.clipsToBounds = true
-        alertImageView?.contentMode = .scaleAspectFit
-        alertImageView?.image = image
-        alertImageView?.tintColor = ToastAlertView.toastTextColor
-        self.addSubview(alertImageView!)
-        alertImageView?.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.addConstraint(NSLayoutConstraint(item: alertImageView!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 132 ))
-        
-        self.addConstraint(NSLayoutConstraint(item: alertImageView!, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailingMargin, multiplier: 1, constant: -padding))
-        self.addConstraint(NSLayoutConstraint(item: alertImageView!, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leadingMargin, multiplier: 1, constant: padding))
-        
-        self.addConstraint(NSLayoutConstraint(item: alertImageView!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .topMargin, multiplier: 1, constant: padding))
-        
-        self.addConstraint(NSLayoutConstraint(item: alertImageView!, attribute: .bottom, relatedBy: .equal, toItem: messageLabel, attribute: .top, multiplier: 1, constant: 0))
-
     }
     
     // MARK: - Display
@@ -224,9 +248,12 @@ public class ToastAlertView: UIView {
         mainWindow?.addSubview(self)
         
         Timer.scheduledTimer(withTimeInterval: dismissTime, repeats: false) { (timer) in
-            self.removeFromSuperview()
-            //NotificationCenter.default.addObserver(self, selector: #selector(reCenter), name: UIDevice.orientationDidChangeNotification, object: nil)
-            NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+            self.hide()
         }
+    }
+    
+    public func hide() {
+        self.removeFromSuperview()
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 }
