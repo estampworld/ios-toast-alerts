@@ -24,7 +24,7 @@ class MasterViewController: UITableViewController {
         Item(title: "Toast with Tap Dissmis", detail: "Toast hides with Tap only"),
         Item(title: "Toast Custom", detail: "Toast with manual dismis")]
 
-//    var vcToastAlertView = ToastAlertView()
+    var vcToastAlertView = ToastAlertView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +91,10 @@ class MasterViewController: UITableViewController {
             case 0:
                 let toastAlertView = ToastAlertView(message: "Added to Library!", image: #imageLiteral(resourceName: "CatIcon"))
                 toastAlertView.show()
+            case 1:
+                vcToastAlertView.shouldDismissWithTap
+                vcToastAlertView.message = "Great!"
+                vcToastAlertView.show()
             default:
                 break
             }

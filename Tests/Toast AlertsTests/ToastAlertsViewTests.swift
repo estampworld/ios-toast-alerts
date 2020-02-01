@@ -55,5 +55,45 @@ class ToastAlertsViewTests: XCTestCase {
         XCTAssertNotNil(toastAlertView2.image)
     }
 
+    func testDismissWithTapAndTime() {
+        let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage())
+        toastAlertView.show()
+        XCTAssertEqual(toastAlertView.shouldDismissWithTap, true)
+        XCTAssertEqual(toastAlertView.dismissTime, 2)
+        XCTAssertEqual(toastAlertView.shouldDismissWithTime, true)
+    }
+    
+    func testNotDismissWithTapAndTime() {
+        let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage(), hideWithType: .none)
+        toastAlertView.show()
+        XCTAssertEqual(toastAlertView.shouldDismissWithTap, false)
+        XCTAssertEqual(toastAlertView.dismissTime, 0)
+        XCTAssertEqual(toastAlertView.shouldDismissWithTime, false)
+    }
+    
+    
+    func testDismissWithTapAndNoTime() {
+        let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage(), hideWithType: .tap)
+        toastAlertView.show()
+        XCTAssertEqual(toastAlertView.shouldDismissWithTap, true)
+        XCTAssertEqual(toastAlertView.dismissTime, 0)
+        XCTAssertEqual(toastAlertView.shouldDismissWithTime, false)
+    }
+    
+    
+    func testNotDismissNoTapAndWithTime() {
+        let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage(), hideWithType: .time(time: 10.0))
+        toastAlertView.show()
+        XCTAssertEqual(toastAlertView.shouldDismissWithTap, false)
+        XCTAssertEqual(toastAlertView.dismissTime, 10)
+        XCTAssertEqual(toastAlertView.shouldDismissWithTime, true)
+    }
+    
+    func testShow() {
+        let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage())
+        XCTAssertTrue(toastAlertView.isHidden)
+        toastAlertView.show()
+        XCTAssertFalse(toastAlertView.isHidden)
+    }
 
 }

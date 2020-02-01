@@ -16,29 +16,61 @@ public class ToastAlertView: UIView {
     // MARK: - Attributes
     
     /**
-     Ask if view should dismiss with tap
-     The default value is false
+     Status of the view if it should dismiss with a tap
+     
+     - Default: true
      */
-    var shouldDismissWithTap = false
+    open var shouldDismissWithTap: Bool {
+        switch dismissType {
+        case .tap, .tapAndTime(_):
+            return true
+        default:
+            return false
+        }
+    }
+    
     /**
-     Ask if view should dismiss with time
+     Status of the view if it should dismiss with time
      The default value is false
      @see dismissTime
      */
-    var shouldDismissWithTime = false
+    open var shouldDismissWithTime: Bool {
+        switch dismissType {
+        case .time(_), .tapAndTime(_):
+            return true
+        default:
+            return false
+        }
+    }
+    
     /**
-     If shouldDismissWithTime is marked true, the view will dismiss with this time
+     The view will dismiss with this time
      The default value is 2.0
      @see shouldDismissWithTime
      */
-    var dismissTime = 0.0
+    open var dismissTime: TimeInterval {
+        switch dismissType {
+        case .time(let time):
+            return time
+        case .tapAndTime(let time):
+            return time
+        default:
+            return 0.0
+        }
+    }
     
+    var dismissType = DissmisType.tapAndTime(time: 2.0)
+
     /**
      The message that should be display
      */
     public var message: String? {
         didSet {
-            messageLabel?.text = message
+            if let messageLabel = messageLabel {
+                messageLabel.text = message
+            } else {
+                addMessageLabel()
+            }
         }
     }
     
@@ -47,7 +79,11 @@ public class ToastAlertView: UIView {
      */
     public var image: UIImage? {
         didSet {
-            alertImageView?.image = image
+            if let alertImageView = alertImageView {
+                alertImageView.image = image
+            } else {
+                addImageView()
+            }
         }
     }
     
@@ -62,10 +98,15 @@ public class ToastAlertView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
-    public init(message: String, image: UIImage) {
+    /// A new ToastAlertView with message and image
+    /// - Parameters:
+    ///   - message: The message that will be displayed
+    ///   - image: The image that will be displayed
+    ///   - hideType: Type of dismissal actions
+    public init(message: String, image: UIImage, hideWithType hideType: DissmisType = .tapAndTime()) {
         super.init(frame: CGRect.zero)
         
         layoutDisplay()
@@ -78,66 +119,8 @@ public class ToastAlertView: UIView {
         messageLabel?.text = message
         alertImageView?.image = image
         
-        self.shouldDismissWithTap = true
-        self.shouldDismissWithTime = true
-        
+        dismissType = hideType
     }
-    
-    /*
-    init(message:String!, image:UIImage!, hideWithTap tapHide:Bool, hideWithTime timeHide:Bool, hideTime time:Double) {
-        self = self.init()
-        if (self != nil) {
-            self.setVars()
-
-            _message = message
-            _image = image
-
-            self.shouldDismissWithTap = tapHide
-            self.shouldDismissWithTime = timeHide
-
-            self.dismissTime = time
-
-        }
-
-        return self
-    }
-
-    init(message:String, images:[AnyObject]) {
-        self = self.init()
-        if (self != nil) {
-            self.setVars()
-
-            _message = message
-            _image = images[0]
-            _images = images
-
-            self.shouldDismissWithTap = true
-            self.shouldDismissWithTime = true
-
-        }
-
-        return self
-    }
-
-    init(message:String!, images:[AnyObject]!, hideWithTap tapHide:Bool, hideWithTime timeHide:Bool, hideTime time:Double) {
-        self = self.init()
-        if (self != nil) {
-            self.setVars()
-
-            _message = message
-            _image = images[0]
-            _images = images
-
-            self.shouldDismissWithTap = tapHide
-            self.shouldDismissWithTime = timeHide
-
-            self.dismissTime = time
-
-        }
-
-        return self
-    }
-     */
     
     // MARK: - UI
     
@@ -161,7 +144,7 @@ public class ToastAlertView: UIView {
 
         self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0))
 
-        self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: messageLabel, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -32))
 
     }
     
@@ -188,13 +171,12 @@ public class ToastAlertView: UIView {
         
         self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .topMargin, multiplier: 1, constant: padding))
         
-        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .bottom, relatedBy: .greaterThanOrEqual, toItem: messageLabel, attribute: .top, multiplier: 1, constant: 0))
+        //self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .bottom, relatedBy: .greaterThanOrEqual, toItem: messageLabel, attribute: .top, multiplier: 1, constant: 0))
     }
     
     private func layoutDisplay() {
+        self.isHidden = true
         reCenter()
-
-        dismissTime = 2.0
         
         self.backgroundColor = UIColor.clear
         self.layer.cornerRadius = 8
@@ -222,14 +204,27 @@ public class ToastAlertView: UIView {
     public func show() {
         let mainWindow = UIApplication.shared.windows.first
         mainWindow?.addSubview(self)
+        self.isHidden = false
         
-        Timer.scheduledTimer(withTimeInterval: dismissTime, repeats: false) { (timer) in
-            self.hide()
+        if shouldDismissWithTime {
+            Timer.scheduledTimer(withTimeInterval: dismissTime, repeats: false) { (timer) in
+                self.hide()
+            }
         }
     }
     
     public func hide() {
-        self.removeFromSuperview()
         NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+        self.isHidden = true
+        self.removeFromSuperview()
+    }
+}
+
+extension ToastAlertView {
+    public enum DissmisType {
+        case none
+        case tap
+        case time(time: TimeInterval = 2.0)
+        case tapAndTime(time: TimeInterval = 2.0)
     }
 }
