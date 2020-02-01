@@ -14,26 +14,7 @@ public class ToastAlertView: UIView {
     static let toastTextColor = UIColor(red: 116.0 / 255.0, green: 117.0 / 255.0, blue: 119.0 / 255.0, alpha: 1.0)
     
     // MARK: - Attributes
-
-    /**
-     The width and height of the frame
-     The default value is 155
-     */
-    var frameSize = 0.0
-    /**
-     The amount of time an image will show
-     The default value is 0.2
-     @see images
-     @see shouldRepeatImagesAnimation
-     */
-    var timeForImagesInAnimation = 0.0
-    /**
-     Ask if images should repeat
-     The default value is true
-     @see images
-     @see timeForImagesInAnimation
-     */
-    var shouldRepeatImagesAnimation = false
+    
     /**
      Ask if view should dismiss with tap
      The default value is false
@@ -55,7 +36,7 @@ public class ToastAlertView: UIView {
     /**
      The message that should be display
      */
-    var message: String? {
+    public var message: String? {
         didSet {
             messageLabel?.text = message
         }
@@ -64,18 +45,12 @@ public class ToastAlertView: UIView {
     /**
      The image that should be display
      */
-    var image: UIImage? {
+    public var image: UIImage? {
         didSet {
             alertImageView?.image = image
         }
     }
-    /**
-     The images that should be display
-     @see timeForImagesInAnimation
-     @see shouldRepeatImagesAnimation
-     */
-    var images: [UIImage]?
-
+    
     private var messageLabel: UILabel?
     private var alertImageView: UIImageView?
     
@@ -195,7 +170,7 @@ public class ToastAlertView: UIView {
         
         guard let alertImageView = alertImageView else { return }
         
-        let padding: CGFloat = 52
+        let padding: CGFloat = 80
         
         alertImageView.clipsToBounds = true
         alertImageView.contentMode = .scaleAspectFit
@@ -205,14 +180,15 @@ public class ToastAlertView: UIView {
         
         alertImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 132 ))
+        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 68))
         
-        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailingMargin, multiplier: 1, constant: -padding))
-        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leadingMargin, multiplier: 1, constant: padding))
+        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 100))
+
+        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         
         self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .topMargin, multiplier: 1, constant: padding))
         
-        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .bottom, relatedBy: .equal, toItem: messageLabel, attribute: .top, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .bottom, relatedBy: .greaterThanOrEqual, toItem: messageLabel, attribute: .top, multiplier: 1, constant: 0))
     }
     
     private func layoutDisplay() {
