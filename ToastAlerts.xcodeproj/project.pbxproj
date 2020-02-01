@@ -70,29 +70,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6116592423E468A900A46184 /* Toast Alerts */ = {
+		6116592423E468A900A46184 /* ToastAlerts */ = {
 			isa = PBXGroup;
 			children = (
 				6116592523E468A900A46184 /* Toast_Alerts.h */,
 				6116593E23E4698E00A46184 /* ToastAlertView.swift */,
 				6116592623E468A900A46184 /* Info.plist */,
 			);
-			path = "Toast Alerts";
+			path = ToastAlerts;
 			sourceTree = "<group>";
 		};
-		6116592F23E468A900A46184 /* Toast AlertsTests */ = {
+		6116592F23E468A900A46184 /* ToastAlertsTests */ = {
 			isa = PBXGroup;
 			children = (
 				6116593023E468A900A46184 /* ToastAlertsViewTests.swift */,
 				6116593223E468A900A46184 /* Info.plist */,
 			);
-			path = "Toast AlertsTests";
+			path = ToastAlertsTests;
 			sourceTree = "<group>";
 		};
 		6116593C23E468C900A46184 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				6116592423E468A900A46184 /* Toast Alerts */,
+				6116592423E468A900A46184 /* ToastAlerts */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -100,7 +100,7 @@
 		6116593D23E468DD00A46184 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6116592F23E468A900A46184 /* Toast AlertsTests */,
+				6116592F23E468A900A46184 /* ToastAlertsTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -367,7 +367,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Sources/Toast Alerts/Info.plist";
+				INFOPLIST_FILE = Sources/ToastAlerts/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -392,7 +392,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Sources/Toast Alerts/Info.plist";
+				INFOPLIST_FILE = Sources/ToastAlerts/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,7 +412,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Tests/Toast AlertsTests/Info.plist";
+				INFOPLIST_FILE = Tests/ToastAlertsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,7 +430,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Tests/Toast AlertsTests/Info.plist";
+				INFOPLIST_FILE = Tests/ToastAlertsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
