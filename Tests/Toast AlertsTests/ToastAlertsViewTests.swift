@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Toast_Alerts
+@testable import ToastAlerts
 
 class Toast_AlertsTests: XCTestCase {
 
