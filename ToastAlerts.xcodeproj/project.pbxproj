@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6116592C23E468A900A46184 /* Toast_Alerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6116592223E468A900A46184 /* Toast_Alerts.framework */; };
+		6116592C23E468A900A46184 /* ToastAlerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6116592223E468A900A46184 /* ToastAlerts.framework */; };
 		6116593123E468A900A46184 /* Toast_AlertsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6116593023E468A900A46184 /* Toast_AlertsTests.swift */; };
 		6116593323E468A900A46184 /* Toast_Alerts.h in Headers */ = {isa = PBXBuildFile; fileRef = 6116592523E468A900A46184 /* Toast_Alerts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6116593F23E4698E00A46184 /* ToastAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6116593E23E4698E00A46184 /* ToastAlertView.swift */; };
@@ -24,10 +24,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6116592223E468A900A46184 /* Toast_Alerts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast_Alerts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6116592223E468A900A46184 /* ToastAlerts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ToastAlerts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6116592523E468A900A46184 /* Toast_Alerts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toast_Alerts.h; sourceTree = "<group>"; };
 		6116592623E468A900A46184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6116592B23E468A900A46184 /* Toast AlertsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Toast AlertsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6116592B23E468A900A46184 /* ToastAlertsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToastAlertsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6116593023E468A900A46184 /* Toast_AlertsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast_AlertsTests.swift; sourceTree = "<group>"; };
 		6116593223E468A900A46184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6116593E23E4698E00A46184 /* ToastAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAlertView.swift; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6116592C23E468A900A46184 /* Toast_Alerts.framework in Frameworks */,
+				6116592C23E468A900A46184 /* ToastAlerts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,8 +64,8 @@
 		6116592323E468A900A46184 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6116592223E468A900A46184 /* Toast_Alerts.framework */,
-				6116592B23E468A900A46184 /* Toast AlertsTests.xctest */,
+				6116592223E468A900A46184 /* ToastAlerts.framework */,
+				6116592B23E468A900A46184 /* ToastAlertsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,9 +119,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6116592123E468A900A46184 /* Toast Alerts */ = {
+		6116592123E468A900A46184 /* ToastAlerts */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6116593623E468A900A46184 /* Build configuration list for PBXNativeTarget "Toast Alerts" */;
+			buildConfigurationList = 6116593623E468A900A46184 /* Build configuration list for PBXNativeTarget "ToastAlerts" */;
 			buildPhases = (
 				6116591D23E468A900A46184 /* Headers */,
 				6116591E23E468A900A46184 /* Sources */,
@@ -132,14 +132,14 @@
 			);
 			dependencies = (
 			);
-			name = "Toast Alerts";
+			name = ToastAlerts;
 			productName = "Toast Alerts";
-			productReference = 6116592223E468A900A46184 /* Toast_Alerts.framework */;
+			productReference = 6116592223E468A900A46184 /* ToastAlerts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6116592A23E468A900A46184 /* Toast AlertsTests */ = {
+		6116592A23E468A900A46184 /* ToastAlertsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6116593923E468A900A46184 /* Build configuration list for PBXNativeTarget "Toast AlertsTests" */;
+			buildConfigurationList = 6116593923E468A900A46184 /* Build configuration list for PBXNativeTarget "ToastAlertsTests" */;
 			buildPhases = (
 				6116592723E468A900A46184 /* Sources */,
 				6116592823E468A900A46184 /* Frameworks */,
@@ -150,9 +150,9 @@
 			dependencies = (
 				6116592E23E468A900A46184 /* PBXTargetDependency */,
 			);
-			name = "Toast AlertsTests";
+			name = ToastAlertsTests;
 			productName = "Toast AlertsTests";
-			productReference = 6116592B23E468A900A46184 /* Toast AlertsTests.xctest */;
+			productReference = 6116592B23E468A900A46184 /* ToastAlertsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +174,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6116591C23E468A900A46184 /* Build configuration list for PBXProject "Toast Alerts" */;
+			buildConfigurationList = 6116591C23E468A900A46184 /* Build configuration list for PBXProject "ToastAlerts" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -187,8 +187,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6116592123E468A900A46184 /* Toast Alerts */,
-				6116592A23E468A900A46184 /* Toast AlertsTests */,
+				6116592123E468A900A46184 /* ToastAlerts */,
+				6116592A23E468A900A46184 /* ToastAlertsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -232,7 +232,7 @@
 /* Begin PBXTargetDependency section */
 		6116592E23E468A900A46184 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6116592123E468A900A46184 /* Toast Alerts */;
+			target = 6116592123E468A900A46184 /* ToastAlerts */;
 			targetProxy = 6116592D23E468A900A46184 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -374,8 +374,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Weeronline.Toast-Alerts";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = estamp.ToastAlerts;
+				PRODUCT_NAME = ToastAlerts;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -399,8 +399,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Weeronline.Toast-Alerts";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = estamp.ToastAlerts;
+				PRODUCT_NAME = ToastAlerts;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,7 +446,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6116591C23E468A900A46184 /* Build configuration list for PBXProject "Toast Alerts" */ = {
+		6116591C23E468A900A46184 /* Build configuration list for PBXProject "ToastAlerts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6116593423E468A900A46184 /* Debug */,
@@ -455,7 +455,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6116593623E468A900A46184 /* Build configuration list for PBXNativeTarget "Toast Alerts" */ = {
+		6116593623E468A900A46184 /* Build configuration list for PBXNativeTarget "ToastAlerts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6116593723E468A900A46184 /* Debug */,
@@ -464,7 +464,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6116593923E468A900A46184 /* Build configuration list for PBXNativeTarget "Toast AlertsTests" */ = {
+		6116593923E468A900A46184 /* Build configuration list for PBXNativeTarget "ToastAlertsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6116593A23E468A900A46184 /* Debug */,

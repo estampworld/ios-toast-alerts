@@ -16,19 +16,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F978C5C123E5F21000FDF10D /* PBXContainerItemProxy */ = {
+		F978C5D423E5F37600FDF10D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F978C5BC23E5F21000FDF10D /* Toast Alerts.xcodeproj */;
+			containerPortal = F978C5CF23E5F37600FDF10D /* ToastAlerts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6116592223E468A900A46184;
-			remoteInfo = "Toast Alerts";
+			remoteInfo = ToastAlerts;
 		};
-		F978C5C323E5F21000FDF10D /* PBXContainerItemProxy */ = {
+		F978C5D623E5F37600FDF10D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F978C5BC23E5F21000FDF10D /* Toast Alerts.xcodeproj */;
+			containerPortal = F978C5CF23E5F37600FDF10D /* ToastAlerts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6116592B23E468A900A46184;
-			remoteInfo = "Toast AlertsTests";
+			remoteInfo = ToastAlertsTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -46,7 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F978C5BC23E5F21000FDF10D /* Toast Alerts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Toast Alerts.xcodeproj"; path = "../Toast Alerts.xcodeproj"; sourceTree = "<group>"; };
+		F978C5CF23E5F37600FDF10D /* ToastAlerts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ToastAlerts.xcodeproj; path = ../ToastAlerts.xcodeproj; sourceTree = "<group>"; };
 		F9F381E120E44BE800D6D9C2 /* Toast Alert Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toast Alert Samples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F381E420E44BE800D6D9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9F381E620E44BE800D6D9C2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -68,11 +68,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F978C5BD23E5F21000FDF10D /* Products */ = {
+		F978C5D023E5F37600FDF10D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F978C5C223E5F21000FDF10D /* Toast_Alerts.framework */,
-				F978C5C423E5F21000FDF10D /* Toast AlertsTests.xctest */,
+				F978C5D523E5F37600FDF10D /* ToastAlerts.framework */,
+				F978C5D723E5F37600FDF10D /* ToastAlertsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,7 +82,7 @@
 			children = (
 				F9F381E320E44BE800D6D9C2 /* Toast Alert Samples */,
 				F9F381E220E44BE800D6D9C2 /* Products */,
-				F978C5BC23E5F21000FDF10D /* Toast Alerts.xcodeproj */,
+				F978C5CF23E5F37600FDF10D /* ToastAlerts.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,8 +157,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = F978C5BD23E5F21000FDF10D /* Products */;
-					ProjectRef = F978C5BC23E5F21000FDF10D /* Toast Alerts.xcodeproj */;
+					ProductGroup = F978C5D023E5F37600FDF10D /* Products */;
+					ProjectRef = F978C5CF23E5F37600FDF10D /* ToastAlerts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -169,18 +169,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		F978C5C223E5F21000FDF10D /* Toast_Alerts.framework */ = {
+		F978C5D523E5F37600FDF10D /* ToastAlerts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = Toast_Alerts.framework;
-			remoteRef = F978C5C123E5F21000FDF10D /* PBXContainerItemProxy */;
+			path = ToastAlerts.framework;
+			remoteRef = F978C5D423E5F37600FDF10D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F978C5C423E5F21000FDF10D /* Toast AlertsTests.xctest */ = {
+		F978C5D723E5F37600FDF10D /* ToastAlertsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Toast AlertsTests.xctest";
-			remoteRef = F978C5C323E5F21000FDF10D /* PBXContainerItemProxy */;
+			path = ToastAlertsTests.xctest;
+			remoteRef = F978C5D623E5F37600FDF10D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

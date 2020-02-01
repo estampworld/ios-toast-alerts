@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Toast_Alerts
+import ToastAlerts
 
 struct Item {
     var title: String
@@ -93,7 +93,7 @@ class MasterViewController: UITableViewController {
                                 
 //                let toastAlertView =  ToastAlertView(message: "Added to Library!", image: #imageLiteral(resourceName: "CatIcon"))
 //                toastAlertView.show()
-//
+break
             default:
                 break
             }
