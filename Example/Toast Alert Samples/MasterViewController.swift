@@ -18,11 +18,10 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [
         Item(title: "Toast with Message & Image", detail: "Toast with message and image. Dismiss with tap or time."),
-        Item(title: "Toast with Message & Image Animation", detail: "Toast with message and 1 image animation loop. Dismiss with tap or time."),
-        Item(title: "Toast with Message & Image Animation Repeat", detail: "Toast with message and image animation loop. Dismiss with tap or time."),
-        Item(title: "Toast with Time Dissmis", detail: "Toast hides with Time only"),
+//        Item(title: "Toast with Time Dissmis", detail: "Toast hides with Time only"),
         Item(title: "Toast with Tap Dissmis", detail: "Toast hides with Tap only"),
-        Item(title: "Toast Custom", detail: "Toast with manual dismis")]
+//        Item(title: "Toast Custom", detail: "Toast with manual dismis")
+    ]
 
     var vcToastAlertView = ToastAlertView()
 
@@ -92,9 +91,8 @@ class MasterViewController: UITableViewController {
                 let toastAlertView = ToastAlertView(message: "Added to Library!", image: #imageLiteral(resourceName: "CatIcon"))
                 toastAlertView.show()
             case 1:
-                vcToastAlertView.shouldDismissWithTap
-                vcToastAlertView.message = "Great!"
-                vcToastAlertView.show()
+                let toastAlertView = ToastAlertView(message: "Tap!", image: UIImage(systemName: "bolt.horizontal")!, hideWithType: .tap)
+                toastAlertView.show()
             default:
                 break
             }

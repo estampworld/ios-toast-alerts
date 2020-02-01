@@ -95,5 +95,22 @@ class ToastAlertsViewTests: XCTestCase {
         toastAlertView.show()
         XCTAssertFalse(toastAlertView.isHidden)
     }
+    
+    func testMultipleShows() {
+        let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage())
+        XCTAssertNil(toastAlertView.superview)
+        toastAlertView.show()
+        XCTAssertFalse(toastAlertView.isHidden)
+        toastAlertView.show()
+        XCTAssertFalse(toastAlertView.isHidden)
+    }
 
+    func testHide() {
+        let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage())
+        toastAlertView.dismissType = .none
+        toastAlertView.show()
+        XCTAssertFalse(toastAlertView.isHidden)
+        toastAlertView.hide()
+        XCTAssertTrue(toastAlertView.isHidden)
+    }
 }

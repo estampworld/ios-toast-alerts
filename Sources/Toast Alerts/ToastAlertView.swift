@@ -12,7 +12,9 @@ public class ToastAlertView: UIView {
     
     private let size = CGSize(width: 250, height: 266)
     static let toastTextColor = UIColor(red: 116.0 / 255.0, green: 117.0 / 255.0, blue: 119.0 / 255.0, alpha: 1.0)
-    
+    private var tapGesture: UITapGestureRecognizer?
+    let mainWindow = UIApplication.shared.windows.first
+
     // MARK: - Attributes
     
     /**
@@ -59,7 +61,7 @@ public class ToastAlertView: UIView {
         }
     }
     
-    var dismissType = DissmisType.tapAndTime(time: 2.0)
+    public var dismissType = DissmisType.tapAndTime(time: 2.0)
 
     /**
      The message that should be display
@@ -159,6 +161,7 @@ public class ToastAlertView: UIView {
         alertImageView.contentMode = .scaleAspectFit
         alertImageView.image = image
         alertImageView.tintColor = ToastAlertView.toastTextColor
+        
         self.addSubview(alertImageView)
         
         alertImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -170,8 +173,6 @@ public class ToastAlertView: UIView {
         self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         
         self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .topMargin, multiplier: 1, constant: padding))
-        
-        //self.addConstraint(NSLayoutConstraint(item: alertImageView, attribute: .bottom, relatedBy: .greaterThanOrEqual, toItem: messageLabel, attribute: .top, multiplier: 1, constant: 0))
     }
     
     private func layoutDisplay() {
@@ -181,10 +182,10 @@ public class ToastAlertView: UIView {
         self.backgroundColor = UIColor.clear
         self.layer.cornerRadius = 8
         self.layer.masksToBounds = true
+        
         NotificationCenter.default.addObserver(self, selector: #selector(reCenter), name: UIDevice.orientationDidChangeNotification, object: nil)
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.prominent)
-        
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -202,9 +203,17 @@ public class ToastAlertView: UIView {
     }
     
     public func show() {
-        let mainWindow = UIApplication.shared.windows.first
+        guard self.isHidden, self.superview == nil else {
+            return
+        }
+        
         mainWindow?.addSubview(self)
         self.isHidden = false
+        
+        if shouldDismissWithTap {
+            tapGesture = UITapGestureRecognizer(target: self, action: #selector(hide))
+            mainWindow?.addGestureRecognizer(tapGesture!)
+        }
         
         if shouldDismissWithTime {
             Timer.scheduledTimer(withTimeInterval: dismissTime, repeats: false) { (timer) in
@@ -213,9 +222,13 @@ public class ToastAlertView: UIView {
         }
     }
     
+    @objc
     public func hide() {
-        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
         self.isHidden = true
+        if let tapGesture = tapGesture {
+            mainWindow?.removeGestureRecognizer(tapGesture)
+        }
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
         self.removeFromSuperview()
     }
 }
