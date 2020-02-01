@@ -13,9 +13,24 @@
 		F9F381EC20E44BE800D6D9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F381EA20E44BE800D6D9C2 /* Main.storyboard */; };
 		F9F381EE20E44BEA00D6D9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9F381ED20E44BEA00D6D9C2 /* Assets.xcassets */; };
 		F9F381F120E44BEA00D6D9C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F381EF20E44BEA00D6D9C2 /* LaunchScreen.storyboard */; };
-		F9F381F920E44C2200D6D9C2 /* EWToastAlerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F381F820E44C2200D6D9C2 /* EWToastAlerts.framework */; };
-		F9F381FA20E44C2200D6D9C2 /* EWToastAlerts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9F381F820E44C2200D6D9C2 /* EWToastAlerts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F978C5C123E5F21000FDF10D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F978C5BC23E5F21000FDF10D /* Toast Alerts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6116592223E468A900A46184;
+			remoteInfo = "Toast Alerts";
+		};
+		F978C5C323E5F21000FDF10D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F978C5BC23E5F21000FDF10D /* Toast Alerts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6116592B23E468A900A46184;
+			remoteInfo = "Toast AlertsTests";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F9F381FB20E44C2200D6D9C2 /* Embed Frameworks */ = {
@@ -24,7 +39,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F9F381FA20E44C2200D6D9C2 /* EWToastAlerts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F978C5BC23E5F21000FDF10D /* Toast Alerts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Toast Alerts.xcodeproj"; path = "../Toast Alerts.xcodeproj"; sourceTree = "<group>"; };
 		F9F381E120E44BE800D6D9C2 /* Toast Alert Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toast Alert Samples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F381E420E44BE800D6D9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9F381E620E44BE800D6D9C2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +55,6 @@
 		F9F381ED20E44BEA00D6D9C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9F381F020E44BEA00D6D9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9F381F220E44BEA00D6D9C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9F381F820E44C2200D6D9C2 /* EWToastAlerts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EWToastAlerts.framework; path = Carthage/Build/iOS/EWToastAlerts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,19 +62,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9F381F920E44C2200D6D9C2 /* EWToastAlerts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F978C5BD23E5F21000FDF10D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F978C5C223E5F21000FDF10D /* Toast_Alerts.framework */,
+				F978C5C423E5F21000FDF10D /* Toast AlertsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F9F381D820E44BE800D6D9C2 = {
 			isa = PBXGroup;
 			children = (
-				F9F381F820E44C2200D6D9C2 /* EWToastAlerts.framework */,
 				F9F381E320E44BE800D6D9C2 /* Toast Alert Samples */,
 				F9F381E220E44BE800D6D9C2 /* Products */,
+				F978C5BC23E5F21000FDF10D /* Toast Alerts.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,12 +155,35 @@
 			mainGroup = F9F381D820E44BE800D6D9C2;
 			productRefGroup = F9F381E220E44BE800D6D9C2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F978C5BD23E5F21000FDF10D /* Products */;
+					ProjectRef = F978C5BC23E5F21000FDF10D /* Toast Alerts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F9F381E020E44BE800D6D9C2 /* Toast Alert Samples */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F978C5C223E5F21000FDF10D /* Toast_Alerts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Toast_Alerts.framework;
+			remoteRef = F978C5C123E5F21000FDF10D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F978C5C423E5F21000FDF10D /* Toast AlertsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Toast AlertsTests.xctest";
+			remoteRef = F978C5C323E5F21000FDF10D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F9F381DF20E44BE800D6D9C2 /* Resources */ = {
@@ -237,7 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -291,7 +336,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
