@@ -38,6 +38,17 @@ github "estampworld/ios-toast-alerts"
 Run `carthage update`
 
 
+### Cocoapods
+
+Add the pod to your Podfile:
+```
+pod 'toastalerts'
+```
+And then run:
+```
+pod install
+```
+
 ## Usage
 
 ### Swift
