@@ -20,7 +20,7 @@ class ToastAlertsViewTests: XCTestCase {
     }
 
     func testEmptyView() {
-        let toastAlertView = ToastAlertView(frame: .zero)
+        let toastAlertView = ToastAlertView()
         XCTAssertNil(toastAlertView.message)
         XCTAssertNil(toastAlertView.image)
     }
@@ -48,13 +48,20 @@ class ToastAlertsViewTests: XCTestCase {
         let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage())
         XCTAssertNotNil(toastAlertView.image)
         
-        let toastAlertView2 = ToastAlertView(frame: .zero)
+        let toastAlertView2 = ToastAlertView()
         XCTAssertNil(toastAlertView2.image)
         
         toastAlertView2.image = UIImage()
         XCTAssertNotNil(toastAlertView2.image)
     }
 
+    func testImageTint() {
+        let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage())
+        XCTAssertEqual(toastAlertView.alertImageView?.tintColor, UIColor.toastAlertTint)
+        toastAlertView.shouldAddTintColor = false
+        XCTAssertNotEqual(toastAlertView.alertImageView?.tintColor, UIColor.toastAlertTint)
+    }
+    
     func testDismissWithTapAndTime() {
         let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage())
         toastAlertView.show()

@@ -11,7 +11,6 @@ import UIKit
 public class ToastAlertView: UIView {
     
     private let size = CGSize(width: 250, height: 266)
-    static let toastTextColor = UIColor(red: 116.0 / 255.0, green: 117.0 / 255.0, blue: 119.0 / 255.0, alpha: 1.0)
     private var tapGesture: UITapGestureRecognizer?
     let mainWindow = UIApplication.shared.windows.first
 
@@ -64,7 +63,7 @@ public class ToastAlertView: UIView {
     public var dismissType = DissmisType.tapAndTime(time: DissmisType.defaultTime)
 
     /**
-     The message that should be display
+     The message that will be displayed
      */
     public var message: String? {
         didSet {
@@ -77,7 +76,7 @@ public class ToastAlertView: UIView {
     }
     
     /**
-     The image that should be display
+     The image that showilluld be displayed
      */
     public var image: UIImage? {
         didSet {
@@ -89,12 +88,19 @@ public class ToastAlertView: UIView {
         }
     }
     
+    /// Add the tint color to the image. Recommended for icons
+    public var shouldAddTintColor = true {
+        didSet {
+            renderImage()
+        }
+    }
+    
     private var messageLabel: UILabel?
-    private var alertImageView: UIImageView?
+    var alertImageView: UIImageView?
     
     // MARK: - Init
     
-    public override init(frame: CGRect) {
+    private override init(frame: CGRect) {
         super.init(frame: frame)
         layoutDisplay()
     }
@@ -135,7 +141,7 @@ public class ToastAlertView: UIView {
         messageLabel.numberOfLines = 0
         messageLabel.text = message
         messageLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        messageLabel.textColor = ToastAlertView.toastTextColor
+        messageLabel.textColor = UIColor.toastAlertTint
         messageLabel.textAlignment = .center
         
         self.addSubview(messageLabel)
@@ -150,6 +156,11 @@ public class ToastAlertView: UIView {
 
     }
     
+    private func renderImage() {
+        alertImageView?.image = image
+        alertImageView?.tintColor = shouldAddTintColor ? UIColor.toastAlertTint : nil
+    }
+    
     private func addImageView() {
         alertImageView = UIImageView()
         
@@ -159,8 +170,7 @@ public class ToastAlertView: UIView {
         
         alertImageView.clipsToBounds = true
         alertImageView.contentMode = .scaleAspectFit
-        alertImageView.image = image
-        alertImageView.tintColor = ToastAlertView.toastTextColor
+        renderImage()
         
         self.addSubview(alertImageView)
         
@@ -241,5 +251,11 @@ extension ToastAlertView {
         case tapAndTime(time: TimeInterval = DissmisType.defaultTime)
         
         public static let defaultTime: TimeInterval = 1.0
+    }
+}
+
+extension UIColor {
+    open class var toastAlertTint: UIColor {
+        return UIColor(red: 116.0 / 255.0, green: 117.0 / 255.0, blue: 119.0 / 255.0, alpha: 1.0)
     }
 }
