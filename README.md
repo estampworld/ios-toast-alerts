@@ -1,8 +1,11 @@
 # iOS Toast Alert View Framework
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-[![Build Status](https://app.bitrise.io/app/d9f915328e4e9274/status.svg?token=mni5O-oZ_vPTNfbzqAEGGw&branch=master)](https://app.bitrise.io/app/d9f915328e4e9274)
+[![Swift Package Manager compatible](https://img.shields.io/badge/SPM-compatible-success)](https://swift.org/package-manager/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+[![Build Status](https://app.bitrise.io/app/6e1f2a3c6874f365/status.svg?token=nmCRIexD1jSq6XuVnwhN5w)](https://app.bitrise.io/app/6e1f2a3c6874f365)
+
+[![codebeat badge](https://codebeat.co/badges/40505224-33e8-49e2-8fdc-6385bc3e46b5)](https://codebeat.co/projects/github-com-estampworld-ios-toast-alerts-master)
 
 A framework to display Toast Alerts in IOS.
 
@@ -12,13 +15,19 @@ A framework to display Toast Alerts in IOS.
 ## Features
 
 * Toast View with Message & Image
-* Toast View with Message & Image Animation
-* Toast View with Message & Image Animation Repeat
 * Toast View with Time Dismiss
 * Toast View with Tap Dismiss
 * Custom Toast View
 
 ## Install
+
+### Swift Package Manager
+
+#### Adding it to an existent iOS Project via Swift Package Manager
+
+- Using Xcode 11 go to File > Swift Packages > Add Package Dependency
+- Paste the project URL: https://github.com/estampworld/ios-toast-alerts
+- Click on next and select the project target
 
 ### Carthage
 
@@ -34,54 +43,30 @@ Run `carthage update`
 ### Swift
 #### Toast Alert View with Message & Image
 
-Show a Toast Alert with message and icon using a Extensions function
+Show a Toast Alert with message and icon using ToastAlertView Object
 ```
-self.showEWToastAlert("Hey!", image: UIImage(named: "CatIcon")!)
-```
-Show a Toast Alert with message and icon using EWToastAlertView Object
-```
-let tav =  EWToastAlertView(message: "Hey!", image: UIImage(named: "Cat Icon")!)
-tav.show()
+let toastAlertView =  ToastAlertView(message: "Hey!", image: UIImage(named: "Cat Icon")!)
+toastAlertView.show()
 ```
 
 #### Toast Alert View with Time Dissmis Only
 
 ```
 //Toast Alert View with Time Dissmis Only
-self.showToastAlert("5 Seconds",
-                    image: UIImage(named: "img1")!,
-                    hideWithTap: false,
-                    hideWithTime: true,
-                    hideTime: 5.0)
-```
-
-#### Toast Alert View with Message & Image Animation
-
-```
-//Toast Alert View with Message & Image Animation
-let images = [UIImage(named: "item0")!,
-              UIImage(named: "item1")!,
-              UIImage(named: "item2")!]
-
-self.showEWToastAlert("Single Animation",
-                      images: images,
-                      frameDuration: 0.1,
-                      repeatAnimation: false,
-                      hideWithTap: true,
-                      hideWithTime: true,
-                      hideTime: 5.0)
+let toastAlertView = ToastAlertView(message: "4 Seconds", image: UIImage(systemName: "flame")!, hideWithType: .time(time: 4))
+toastAlertView.show()
 ```
 
 #### Custom Toast Alert View Show
 
 ```
 //Custom EW Toast Alert View
-let tav = EWToastAlertView()
-tav.message = “Example”
-tav.image = UIImage(named: “img1”)!
-tav.show()
-//tav.dismiss() to Hide
+let toastAlertView = ToastAlertView()
+toastAlertView.message = "Example"
+toastAlertView.image = UIImage(named: "img1")!
+toastAlertView.show()
+//toastAlertView.dismiss() to Hide
 ```
 
 ### Examples
-![alt tag](http://static1.squarespace.com/static/543c2e48e4b07dd5493ff4a1/55d24661e4b09a7ab6e1c851/57d876d42e69cff710a6ea7c/1473803992838/Simulator+Screen+Shot+Sep+13%2C+2016%2C+3.59.38+PM.png)
+![Example](Example/example1.png)

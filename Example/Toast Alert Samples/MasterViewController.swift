@@ -88,7 +88,7 @@ class MasterViewController: UITableViewController {
             
             switch (indexPath as NSIndexPath).row {
             case 0:
-                let toastAlertView = ToastAlertView(message: "Added to Library!", image: #imageLiteral(resourceName: "CatIcon"))
+                let toastAlertView = ToastAlertView(message: "Added to Library!", image: #imageLiteral(resourceName: "Cup"))
                 toastAlertView.show()
             case 1:
                 let toastAlertView = ToastAlertView(message: "Time!", image: UIImage(systemName: "flame")!, hideWithType: .time(time: 4))
