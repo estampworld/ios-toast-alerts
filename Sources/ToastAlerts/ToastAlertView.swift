@@ -47,7 +47,7 @@ public class ToastAlertView: UIView {
     
     /**
      The view will dismiss with this time
-     The default value is 2.0
+     - Default: 1
      @see shouldDismissWithTime
      */
     open var dismissTime: TimeInterval {
@@ -61,7 +61,7 @@ public class ToastAlertView: UIView {
         }
     }
     
-    public var dismissType = DissmisType.tapAndTime(time: 2.0)
+    public var dismissType = DissmisType.tapAndTime(time: DissmisType.defaultTime)
 
     /**
      The message that should be display
@@ -237,7 +237,9 @@ extension ToastAlertView {
     public enum DissmisType {
         case none
         case tap
-        case time(time: TimeInterval = 2.0)
-        case tapAndTime(time: TimeInterval = 2.0)
+        case time(time: TimeInterval = DissmisType.defaultTime)
+        case tapAndTime(time: TimeInterval = DissmisType.defaultTime)
+        
+        public static let defaultTime: TimeInterval = 1.0
     }
 }

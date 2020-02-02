@@ -18,7 +18,7 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [
         Item(title: "Toast with Message & Image", detail: "Toast with message and image. Dismiss with tap or time."),
-//        Item(title: "Toast with Time Dissmis", detail: "Toast hides with Time only"),
+        Item(title: "Toast with Time Dissmis", detail: "Toast hides with Time only"),
         Item(title: "Toast with Tap Dissmis", detail: "Toast hides with Tap only"),
 //        Item(title: "Toast Custom", detail: "Toast with manual dismis")
     ]
@@ -91,6 +91,9 @@ class MasterViewController: UITableViewController {
                 let toastAlertView = ToastAlertView(message: "Added to Library!", image: #imageLiteral(resourceName: "CatIcon"))
                 toastAlertView.show()
             case 1:
+                let toastAlertView = ToastAlertView(message: "Time!", image: UIImage(systemName: "flame")!, hideWithType: .time(time: 4))
+                toastAlertView.show()
+            case 2:
                 let toastAlertView = ToastAlertView(message: "Tap!", image: UIImage(systemName: "bolt.horizontal")!, hideWithType: .tap)
                 toastAlertView.show()
             default:
