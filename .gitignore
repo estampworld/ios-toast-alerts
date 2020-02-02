@@ -1,2 +1,18 @@
+# OS X
 .DS_Store
+
+# Xcode
+
+## Build generated
+build/
+DerivedData
+
+## Various settings
 xcuserdata
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# Carthage
+Carthage/Build

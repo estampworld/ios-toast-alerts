@@ -69,4 +69,4 @@ toastAlertView.show()
 ```
 
 ### Examples
-![Example](Example/example1.png)
+<img src="Example/example1.png" width="320px" alt="Example" />
