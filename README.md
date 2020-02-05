@@ -1,4 +1,4 @@
-# iOS Toast Alert View Framework
+# Toast Alert View
 
 
 [![Swift Package Manager compatible](https://img.shields.io/badge/SPM-compatible-success)](https://swift.org/package-manager/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -81,3 +81,19 @@ toastAlertView.show()
 
 ### Examples
 <img src="Example/example1.png" width="320px" alt="Example" />
+
+### Maintainers
+
+[Eduardo Irias](https://github.com/eduardo22i), creator.
+
+### Contributing
+
+1. Fork it ( https://github.com/[my-github-username]/ios-toast-alerts/fork )
+2. Create your feature branch (git checkout -b feature/[my-new-feature])
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin feature/[my-new-feature])
+5. Create a new Pull Request
+
+### License
+
+Toast Alert Views is available under the MIT license. See the LICENSE file for more info.
