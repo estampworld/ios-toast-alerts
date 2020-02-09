@@ -74,7 +74,7 @@ class ToastAlertsViewTests: XCTestCase {
         let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage(), hideWithType: .none)
         toastAlertView.show()
         XCTAssertEqual(toastAlertView.shouldDismissWithTap, false)
-        XCTAssertEqual(toastAlertView.dismissTime, 0)
+        XCTAssertNil(toastAlertView.dismissTime)
         XCTAssertEqual(toastAlertView.shouldDismissWithTime, false)
     }
     
@@ -83,7 +83,7 @@ class ToastAlertsViewTests: XCTestCase {
         let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage(), hideWithType: .tap)
         toastAlertView.show()
         XCTAssertEqual(toastAlertView.shouldDismissWithTap, true)
-        XCTAssertEqual(toastAlertView.dismissTime, 0)
+        XCTAssertNil(toastAlertView.dismissTime)
         XCTAssertEqual(toastAlertView.shouldDismissWithTime, false)
     }
     

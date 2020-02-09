@@ -12,7 +12,7 @@ public class ToastAlertView: UIView {
     
     private let size = CGSize(width: 250, height: 266)
     private var tapGesture: UITapGestureRecognizer?
-    let mainWindow = UIApplication.shared.windows.first
+    private let mainWindow = UIApplication.shared.windows.first
 
     // MARK: - Attributes
     
@@ -49,17 +49,18 @@ public class ToastAlertView: UIView {
      - Default: 1
      @see shouldDismissWithTime
      */
-    open var dismissTime: TimeInterval {
+    open var dismissTime: TimeInterval? {
         switch dismissType {
         case .time(let time):
             return time
         case .tapAndTime(let time):
             return time
         default:
-            return 0.0
+            return nil
         }
     }
     
+    /// Specifies how the view can be dissmised
     public var dismissType = DissmisType.tapAndTime(time: DissmisType.defaultTime)
 
     /**
@@ -95,8 +96,8 @@ public class ToastAlertView: UIView {
         }
     }
     
-    private var messageLabel: UILabel?
-    var alertImageView: UIImageView?
+    internal var messageLabel: UILabel?
+    internal var alertImageView: UIImageView?
     
     // MARK: - Init
     
@@ -225,7 +226,7 @@ public class ToastAlertView: UIView {
             mainWindow?.addGestureRecognizer(tapGesture!)
         }
         
-        if shouldDismissWithTime {
+        if shouldDismissWithTime, let dismissTime = dismissTime {
             Timer.scheduledTimer(withTimeInterval: dismissTime, repeats: false) { (timer) in
                 self.hide()
             }
