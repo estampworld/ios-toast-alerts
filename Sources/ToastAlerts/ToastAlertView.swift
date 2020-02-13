@@ -12,7 +12,7 @@ public class ToastAlertView: UIView {
     
     private let size = CGSize(width: 250, height: 266)
     private var tapGesture: UITapGestureRecognizer?
-    private let mainWindow: UIWindow? {
+    private var mainWindow: UIWindow? {
         return UIApplication.shared.windows.first
     }
 
