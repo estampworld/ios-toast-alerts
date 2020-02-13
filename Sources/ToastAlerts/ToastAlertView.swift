@@ -12,7 +12,9 @@ public class ToastAlertView: UIView {
     
     private let size = CGSize(width: 250, height: 266)
     private var tapGesture: UITapGestureRecognizer?
-    private let mainWindow = UIApplication.shared.windows.first
+    private let mainWindow: UIWindow? {
+        return UIApplication.shared.windows.first
+    }
 
     // MARK: - Attributes
     
@@ -207,7 +209,9 @@ public class ToastAlertView: UIView {
     // MARK: - Display
     
     @objc private func reCenter() {
-        let screenSize = UIScreen.main.bounds.size
+        guard let screenSize = mainWindow?.bounds.size else {
+            return
+        }
         let x = (screenSize.width / 2.0) - size.width / 2
         let y = (screenSize.height / 2.0)  - size.height / 2
         frame = CGRect(x: x, y: y, width: size.width, height: size.height)
@@ -219,6 +223,7 @@ public class ToastAlertView: UIView {
         }
         
         mainWindow?.addSubview(self)
+        reCenter()
         self.isHidden = false
         
         if shouldDismissWithTap {
