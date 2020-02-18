@@ -1,6 +1,0 @@
-framework module EWToastAlerts {
-  umbrella header "EWToastAlerts.h"
-
-  export *
-  module * { export * }
-}
