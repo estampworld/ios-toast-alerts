@@ -19,12 +19,8 @@ public class ToastAlertView: UIView {
 
     // MARK: - Attributes
     
-    /**
-     Status of the view if it should dismiss with a tap
-     
-     - Default: true
-     */
-    open var shouldDismissWithTap: Bool {
+    /// Status of the view if it should dismiss with a tap
+    open var isDismissedWithTap: Bool {
         switch dismissType {
         case .tap, .tapAndTime(_):
             return true
@@ -34,10 +30,7 @@ public class ToastAlertView: UIView {
     }
     
     /// Status of the view if it should dismiss with time
-    /// Default:
-    ///      value is false
-    /// see ``dismissTime``
-    open var shouldDismissWithTime: Bool {
+    open var isdDismissedWithTime: Bool {
         switch dismissType {
         case .time(_), .tapAndTime(_):
             return true
@@ -46,11 +39,7 @@ public class ToastAlertView: UIView {
         }
     }
     
-    /**
-     The view will dismiss with this time
-     - Default: 1
-     @see shouldDismissWithTime
-     */
+    /// The view will dismiss with this time
     open var dismissTime: TimeInterval? {
         switch dismissType {
         case .time(let time):
@@ -227,12 +216,12 @@ public class ToastAlertView: UIView {
         reCenter()
         self.isHidden = false
         
-        if shouldDismissWithTap {
+        if isDismissedWithTap {
             tapGesture = UITapGestureRecognizer(target: self, action: #selector(hide))
             mainWindow?.addGestureRecognizer(tapGesture!)
         }
         
-        if shouldDismissWithTime, let dismissTime = dismissTime {
+        if isdDismissedWithTime, let dismissTime = dismissTime {
             Timer.scheduledTimer(withTimeInterval: dismissTime, repeats: false) { (timer) in
                 self.hide()
             }
