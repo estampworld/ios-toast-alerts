@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// A ToastAlertView contains a message and image.
 public class ToastAlertView: UIView {
     
     private let size = CGSize(width: 250, height: 266)
@@ -32,11 +33,10 @@ public class ToastAlertView: UIView {
         }
     }
     
-    /**
-     Status of the view if it should dismiss with time
-     The default value is false
-     @see dismissTime
-     */
+    /// Status of the view if it should dismiss with time
+    /// Default:
+    ///      value is false
+    /// see ``dismissTime``
     open var shouldDismissWithTime: Bool {
         switch dismissType {
         case .time(_), .tapAndTime(_):
@@ -217,6 +217,7 @@ public class ToastAlertView: UIView {
         frame = CGRect(x: x, y: y, width: size.width, height: size.height)
     }
     
+    /// Shows the current Toast Alert View
     public func show() {
         guard self.isHidden, self.superview == nil else {
             return
@@ -238,8 +239,8 @@ public class ToastAlertView: UIView {
         }
     }
     
-    @objc
-    public func hide() {
+    /// Hides the current Toast Alert View
+    @objc public func hide() {
         self.isHidden = true
         if let tapGesture = tapGesture {
             mainWindow?.removeGestureRecognizer(tapGesture)
