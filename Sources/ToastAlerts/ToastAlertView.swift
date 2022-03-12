@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// A ToastAlertView contains a message and image.
 public class ToastAlertView: UIView {
     
     private let size = CGSize(width: 250, height: 266)
@@ -18,12 +19,8 @@ public class ToastAlertView: UIView {
 
     // MARK: - Attributes
     
-    /**
-     Status of the view if it should dismiss with a tap
-     
-     - Default: true
-     */
-    open var shouldDismissWithTap: Bool {
+    /// Status of the view if it should dismiss with a tap
+    open var isDismissedWithTap: Bool {
         switch dismissType {
         case .tap, .tapAndTime(_):
             return true
@@ -32,12 +29,8 @@ public class ToastAlertView: UIView {
         }
     }
     
-    /**
-     Status of the view if it should dismiss with time
-     The default value is false
-     @see dismissTime
-     */
-    open var shouldDismissWithTime: Bool {
+    /// Status of the view if it should dismiss with time
+    open var isdDismissedWithTime: Bool {
         switch dismissType {
         case .time(_), .tapAndTime(_):
             return true
@@ -46,11 +39,7 @@ public class ToastAlertView: UIView {
         }
     }
     
-    /**
-     The view will dismiss with this time
-     - Default: 1
-     @see shouldDismissWithTime
-     */
+    /// The view will dismiss with this time
     open var dismissTime: TimeInterval? {
         switch dismissType {
         case .time(let time):
@@ -217,6 +206,7 @@ public class ToastAlertView: UIView {
         frame = CGRect(x: x, y: y, width: size.width, height: size.height)
     }
     
+    /// Shows the current Toast Alert View
     public func show() {
         guard self.isHidden, self.superview == nil else {
             return
@@ -226,20 +216,20 @@ public class ToastAlertView: UIView {
         reCenter()
         self.isHidden = false
         
-        if shouldDismissWithTap {
+        if isDismissedWithTap {
             tapGesture = UITapGestureRecognizer(target: self, action: #selector(hide))
             mainWindow?.addGestureRecognizer(tapGesture!)
         }
         
-        if shouldDismissWithTime, let dismissTime = dismissTime {
+        if isdDismissedWithTime, let dismissTime = dismissTime {
             Timer.scheduledTimer(withTimeInterval: dismissTime, repeats: false) { (timer) in
                 self.hide()
             }
         }
     }
     
-    @objc
-    public func hide() {
+    /// Hides the current Toast Alert View
+    @objc public func hide() {
         self.isHidden = true
         if let tapGesture = tapGesture {
             mainWindow?.removeGestureRecognizer(tapGesture)

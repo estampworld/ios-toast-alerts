@@ -65,35 +65,35 @@ class ToastAlertsViewTests: XCTestCase {
     func testDismissWithTapAndTime() {
         let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage())
         toastAlertView.show()
-        XCTAssertEqual(toastAlertView.shouldDismissWithTap, true)
+        XCTAssertEqual(toastAlertView.isDismissedWithTap, true)
         XCTAssertEqual(toastAlertView.dismissTime, 1)
-        XCTAssertEqual(toastAlertView.shouldDismissWithTime, true)
+        XCTAssertEqual(toastAlertView.isdDismissedWithTime, true)
     }
     
     func testNotDismissWithTapAndTime() {
         let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage(), hideWithType: .none)
         toastAlertView.show()
-        XCTAssertEqual(toastAlertView.shouldDismissWithTap, false)
+        XCTAssertEqual(toastAlertView.isDismissedWithTap, false)
         XCTAssertNil(toastAlertView.dismissTime)
-        XCTAssertEqual(toastAlertView.shouldDismissWithTime, false)
+        XCTAssertEqual(toastAlertView.isdDismissedWithTime, false)
     }
     
     
     func testDismissWithTapAndNoTime() {
         let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage(), hideWithType: .tap)
         toastAlertView.show()
-        XCTAssertEqual(toastAlertView.shouldDismissWithTap, true)
+        XCTAssertEqual(toastAlertView.isDismissedWithTap, true)
         XCTAssertNil(toastAlertView.dismissTime)
-        XCTAssertEqual(toastAlertView.shouldDismissWithTime, false)
+        XCTAssertEqual(toastAlertView.isdDismissedWithTime, false)
     }
     
     
     func testNotDismissNoTapAndWithTime() {
         let toastAlertView = ToastAlertView(message: "Test Message", image: UIImage(), hideWithType: .time(time: 10.0))
         toastAlertView.show()
-        XCTAssertEqual(toastAlertView.shouldDismissWithTap, false)
+        XCTAssertEqual(toastAlertView.isDismissedWithTap, false)
         XCTAssertEqual(toastAlertView.dismissTime, 10)
-        XCTAssertEqual(toastAlertView.shouldDismissWithTime, true)
+        XCTAssertEqual(toastAlertView.isdDismissedWithTime, true)
     }
     
     func testShow() {
